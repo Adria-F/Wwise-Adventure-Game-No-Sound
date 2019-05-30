@@ -1,0 +1,81 @@
+Event	ID	Name			Wwise Object Path	Notes
+	547945861	Object_Rune_Charge_Stop			\Objects\SoundBankSpecific\Object_Rune_Charge_Stop	
+	1205412814	Ambient_Core_HorribleSound			\Ambient\SoundBankSpecific\Dungeon\Core\Ambient_Core_HorribleSound	
+	1230192158	Magic_Blast_Impact			\Magic\SoundBankSpecific\Magic_Blast_Impact	
+	1411895808	Wwizard_DialogueLine_Q8d_03			\NPCs\Dialogue\Quest 8\Wwizard_DialogueLine_Q8d_03	
+	1411895809	Wwizard_DialogueLine_Q8d_02			\NPCs\Dialogue\Quest 8\Wwizard_DialogueLine_Q8d_02	
+	1411895810	Wwizard_DialogueLine_Q8d_01			\NPCs\Dialogue\Quest 8\Wwizard_DialogueLine_Q8d_01	
+	1817926999	Object_Rune_Charge_Play			\Objects\SoundBankSpecific\Object_Rune_Charge_Play	
+	2040456588	Wwizard_DialogueLine_Q8c_02			\NPCs\Dialogue\Quest 8\Wwizard_DialogueLine_Q8c_02	
+	2040456589	Wwizard_DialogueLine_Q8c_03			\NPCs\Dialogue\Quest 8\Wwizard_DialogueLine_Q8c_03	
+	2040456591	Wwizard_DialogueLine_Q8c_01			\NPCs\Dialogue\Quest 8\Wwizard_DialogueLine_Q8c_01	
+	2095238286	Destruction_Core_ShieldBreak			\Destruction\RegionSpecific\Destruction_Core_ShieldBreak	
+	2142579352	Wwizard_DialogueLine_Q8b_01			\NPCs\Dialogue\Quest 8\Wwizard_DialogueLine_Q8b_01	
+	2142579354	Wwizard_DialogueLine_Q8b_03			\NPCs\Dialogue\Quest 8\Wwizard_DialogueLine_Q8b_03	
+	2142579355	Wwizard_DialogueLine_Q8b_02			\NPCs\Dialogue\Quest 8\Wwizard_DialogueLine_Q8b_02	
+	2142579356	Wwizard_DialogueLine_Q8b_05			\NPCs\Dialogue\Quest 8\Wwizard_DialogueLine_Q8b_05	
+	2142579357	Wwizard_DialogueLine_Q8b_04			\NPCs\Dialogue\Quest 8\Wwizard_DialogueLine_Q8b_04	
+	2142579358	Wwizard_DialogueLine_Q8b_07			\NPCs\Dialogue\Quest 8\Wwizard_DialogueLine_Q8b_07	
+	2142579359	Wwizard_DialogueLine_Q8b_06			\NPCs\Dialogue\Quest 8\Wwizard_DialogueLine_Q8b_06	
+	2637251965	Magic_Blast			\Magic\SoundBankSpecific\Magic_Blast	
+	2689787085	Magic_Stop			\Magic\SoundBankSpecific\Magic_Stop	
+	3012415428	Pickup_WeaponType			\Player\General\Pickup_WeaponType	
+	3250765487	Destruction_Core_Explosion			\Destruction\RegionSpecific\Destruction_Core_Explosion	
+	3373889173	Magic_Charge			\Magic\General\Magic_Charge	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	3251833556	Player_Weapon_Type			\Player\Player_Weapon_Type	
+	3616336268	Player_Pickup_Type			\Player\Player_Pickup_Type	
+
+Switch	ID	Name	Switch Group			Notes
+	490825222	PickAxe	Player_Weapon_Type			
+	703486095	Hammer	Player_Weapon_Type			
+	765201635	Axe	Player_Weapon_Type			
+	2454616260	Sword	Player_Weapon_Type			
+	3732162827	Dagger	Player_Weapon_Type			
+	1222624712	Item	Player_Pickup_Type			
+	3893417221	Weapon	Player_Pickup_Type			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	1744050084	Magic_ChargeIntensity			\Magic\Magic_ChargeIntensity	
+
+Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
+	144235066	SoundSeed Wind	SoundSeed Air/SoundSeed Wind		\Actor-Mixer Hierarchy\Default Work Unit\World\Player\Player\Magic\Magic_Charge\magic_charge_wind\SoundSeed Wind	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	15988685	PinkShield_Impact_01	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Cinematic\BAS_CIN_PinkShield_Impact_01_B38F83E4.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Ambient\Ambiences\Ambiences_Emitters\Cinematic\Core_Shields\Core_Shield_Impact\PinkShield_Impact_01		32472
+	54157530	Core_Shield_Impact_Hammer	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Cinematic\BAS_CIN_HammerHit_03_B38F83E4.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Ambient\Ambiences\Ambiences_Emitters\Cinematic\Core_Shields\Core_Shield_Impact_Hammer		22313
+	82713964	Rune_Charge_LP	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Cinematic\BAS_CIN_RuneCharge_Loop_B7CE1D28.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Objects\Objects\Object_Props\Props\Core\Rune_Charge_LP		36020
+	102407192	PinkBall_Impact_01	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Cinematic\BAS_CIN_PinkBall_Impact_01_EA4E482E.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Player\Player\Magic\Magic_Blast_Impact\PinkBall_Impact_01		200994
+	115882410	PinkBall_Impact_02	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Cinematic\BAS_CIN_PinkBall_Impact_02_EA4E482E.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Player\Player\Magic\Magic_Blast_Impact\PinkBall_Impact_02		171452
+	117550963	PinkBall_Impact_03	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Cinematic\BAS_CIN_PinkBall_Impact_03_EA4E482E.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Player\Player\Magic\Magic_Blast_Impact\PinkBall_Impact_03		221876
+	222577091	Ambient_Core_Shield_Destroyed	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Cinematic\BAS_CIN_PinkShield_After_Loop_B38F83E4.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Ambient\Ambiences\Ambiences_Emitters\Cinematic\Core_Shields\Ambient_Core_Shield_Destroyed		103925
+	339035677	BigBallFire	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Cinematic\BAS_CIN_BigBallFire_9404A9A1.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Player\Player\Magic\Magic_Blast_Fired\BigBallFire		251842
+	543249257	Rune_Charge_End_03	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Wwizard\BAS_rune_charge_end_03_34394A6E.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Objects\Objects\Object_Props\Props\Core\Rune_Charge_End\Rune_Charge_End_03		19239
+	544641944	Destruction_Core_Explosion	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Objects\BAS_shield_core_explosion_01_34394A6E.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Objects\Objects\Object_Destruction\Object_Destruction\Destruction_Core_Explosion		75954
+	616851024	PinkBall_Fire_03	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Cinematic\BAS_CIN_PinkBall_Fire_03_9404A9A1.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Player\Player\Magic\Magic_Blast_Fired\Magic_Blast_Fired\PinkBall_Fire_03		170260
+	714356067	PinkBall_Fire_02	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Cinematic\BAS_CIN_PinkBall_Fire_02_9404A9A1.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Player\Player\Magic\Magic_Blast_Fired\Magic_Blast_Fired\PinkBall_Fire_02		178328
+	782804215	Rune_Charge_End_02	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Wwizard\BAS_rune_charge_end_02_34394A6E.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Objects\Objects\Object_Props\Props\Core\Rune_Charge_End\Rune_Charge_End_02		15943
+	835763951	PinkBall_Fire_01	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Cinematic\BAS_CIN_PinkBall_Fire_01_9404A9A1.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Player\Player\Magic\Magic_Blast_Fired\Magic_Blast_Fired\PinkBall_Fire_01		192970
+	838527785	Creature_EarthSweetener_02	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Cinematic\BAS_CIN_Creature_EarthSweetener_02_B38F83E4.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Ambient\Ambiences\Ambiences_Emitters\Cinematic\Core_HorribleSound\Creature_EarthSweetener_02		93768
+	931042639	PinkShield_Impact_02	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Cinematic\BAS_CIN_PinkShield_Impact_02_B38F83E4.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Ambient\Ambiences\Ambiences_Emitters\Cinematic\Core_Shields\Core_Shield_Impact\PinkShield_Impact_02		53676
+	931401541	Rune_Charge_End_01	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Wwizard\BAS_rune_charge_end_01_34394A6E.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Objects\Objects\Object_Props\Props\Core\Rune_Charge_End\Rune_Charge_End_01		19073
+	1008309616	Destruction_Core_ShieldBreak	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Cinematic\BAS_CIN_PinkShield_Impact_Final_34394A6E.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Objects\Objects\Object_Destruction\Object_Destruction\Destruction_Core_ShieldBreak		97823
+	1026572653	magic_charge_debris	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Objects\Earth_Debris_FF9C2B5C.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Player\Player\Magic\Magic_Charge\magic_charge_debris		1056240
+	1055916331	Core_HorribleSound	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Cinematic\BAS_CIN_Creature_Start_75BEBB09.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Ambient\Ambiences\Ambiences_Emitters\Cinematic\Core_HorribleSound\Core_HorribleSound		26510
+
+Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
+	75905970	Wwizard_DialogueLine_Q8d_01	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\Voices\English(US)\Wwizard_VoiceLine_Q8d_1_C8419E13.wem	75905970.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q8d_01	
+	169317805	Wwizard_DialogueLine_Q8b_04	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\Voices\English(US)\Wwizard_VoiceLine_Q8b_4_BCD6F23F.wem	169317805.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q8b_04	
+	226571535	Wwizard_DialogueLine_Q8d_02	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\Voices\English(US)\Wwizard_VoiceLine_Q8d_1_86FF8098.wem	226571535.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q8d_02	
+	368345425	Wwizard_DialogueLine_Q8d_03	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\Voices\English(US)\Wwizard_VoiceLine_Q8d_1_ADD70F8E.wem	368345425.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q8d_03	
+	466892797	Wwizard_DialogueLine_Q8b_02	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\Voices\English(US)\Wwizard_VoiceLine_Q8b_2_BCD6F23F.wem	466892797.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q8b_02	
+	530205856	Wwizard_DialogueLine_Q8b_03	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\Voices\English(US)\Wwizard_VoiceLine_Q8b_3_BCD6F23F.wem	530205856.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q8b_03	
+	574334117	Wwizard_DialogueLine_Q8b_05	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\Voices\English(US)\Wwizard_VoiceLine_Q8b_5_BCD6F23F.wem	574334117.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q8b_05	
+	685782540	Wwizard_DialogueLine_Q8b_07	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\Voices\English(US)\Wwizard_VoiceLine_Q8b_7_BCD6F23F.wem	685782540.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q8b_07	
+	689306552	Wwizard_DialogueLine_Q8b_01	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\Voices\English(US)\Wwizard_VoiceLine_Q8b_1_BCD6F23F.wem	689306552.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q8b_01	
+	727053417	Wwizard_DialogueLine_Q8b_06	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\Voices\English(US)\Wwizard_VoiceLine_Q8b_6_BCD6F23F.wem	727053417.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q8b_06	
+	741157044	Wwizard_DialogueLine_Q8c_03	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\Voices\English(US)\Wwizard_VoiceLine_Q8c_1_D03ED443.wem	741157044.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q8c_03	
+	836084269	Wwizard_DialogueLine_Q8c_01	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\Voices\English(US)\Wwizard_VoiceLine_Q8c_1_EB1CE066.wem	836084269.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q8c_01	
+	971196653	Wwizard_DialogueLine_Q8c_02	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\Voices\English(US)\Wwizard_VoiceLine_Q8c_1_CA4DD921.wem	971196653.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q8c_02	
+

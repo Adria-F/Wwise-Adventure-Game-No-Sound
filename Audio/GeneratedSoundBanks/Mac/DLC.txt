@@ -1,0 +1,25 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2048928861	DLC_Ambient_Heaven			\Ambient\DLC\DLC_Ambient_Heaven	
+	2622476831	DLC_Button			\Ambient\DLC\DLC_Button	
+	2874568351	DLC_Cannon_Shot			\Ambient\DLC\DLC_Cannon_Shot	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	3917897988	Distance_to_Player			\Generic\Distance_to_Player	
+
+Modulator Envelope	ID	Name			Wwise Object Path	Notes
+	360368708	Modulator Envelope (Custom)				
+
+Effect plug-ins	ID	Name	Type				Notes
+	3868582268	WAG_DLC_Room	Wwise Convolution Reverb			Impulse response created by Pinguin ing.büro © 2010 Pinguin ing.büro.  All rights reserved. IR Pre-delay: 10ms 
+
+Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
+	52615721	Wwise Synth One	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\World\Ambient\Ambiences\Ambiences_Emitters\DLC\WAG_Button\Wwise Synth One	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	73574320	Ambient_DLC_Cannon	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Other\WAG_TmpShotSound_7FAA2F78.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Ambient\Ambiences\Ambiences_Emitters\DLC\Cannon_Shot\Ambient_DLC_Cannon		2403
+	466737030	Confetti	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Other\WAG_Sparkle_CA4DB376.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Ambient\Ambiences\Ambiences_Emitters\DLC\Cannon_Shot\Confetti		14331
+	676619034	DLC_AMB_Heaven	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Ambient\Ambient_Background\BAS_AMB_Heaven_185703E8.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Ambient\Ambiences\Ambiences_Emitters\DLC\DLC_AMB_Heaven		263495
+
+Plug-in Media	ID	Name	Source file	Type	Wwise Object Path	Notes	Data Size
+	609174261	WAG_DLC_Room	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\Plugins\Wwise Convolution Reverb\AK_Factory_IR\Halls\AK Brasilien Halle_DA4BBD8E.wem	Wwise Convolution Reverb (Shared)	\Effects\Default Work Unit\Reverbs\WAG_DLC_Room	Impulse response created by Pinguin ing.büro © 2010 Pinguin ing.büro.  All rights reserved. IR Pre-delay: 10ms 	329376
+

@@ -1,0 +1,61 @@
+Event	ID	Name			Wwise Object Path	Notes
+	509318909	Pickup_ItemType			\Player\General\Pickup_ItemType	
+	958722912	Blacksmith_DialogueLine_Q3b_04			\NPCs\Dialogue\Quest 3\Blacksmith_DialogueLine_Q3b_04	
+	958722913	Blacksmith_DialogueLine_Q3b_05			\NPCs\Dialogue\Quest 3\Blacksmith_DialogueLine_Q3b_05	
+	958722917	Blacksmith_DialogueLine_Q3b_01			\NPCs\Dialogue\Quest 3\Blacksmith_DialogueLine_Q3b_01	
+	958722918	Blacksmith_DialogueLine_Q3b_02			\NPCs\Dialogue\Quest 3\Blacksmith_DialogueLine_Q3b_02	
+	958722919	Blacksmith_DialogueLine_Q3b_03			\NPCs\Dialogue\Quest 3\Blacksmith_DialogueLine_Q3b_03	
+	1603596380	Wwizard_DialogueLine_Q3a_10			\NPCs\Dialogue\Quest 3\Wwizard_DialogueLine_Q3a_10	
+	1620373958	Wwizard_DialogueLine_Q3a_09			\NPCs\Dialogue\Quest 3\Wwizard_DialogueLine_Q3a_09	
+	1620373959	Wwizard_DialogueLine_Q3a_08			\NPCs\Dialogue\Quest 3\Wwizard_DialogueLine_Q3a_08	
+	1620373960	Wwizard_DialogueLine_Q3a_07			\NPCs\Dialogue\Quest 3\Wwizard_DialogueLine_Q3a_07	
+	1620373961	Wwizard_DialogueLine_Q3a_06			\NPCs\Dialogue\Quest 3\Wwizard_DialogueLine_Q3a_06	
+	1620373962	Wwizard_DialogueLine_Q3a_05			\NPCs\Dialogue\Quest 3\Wwizard_DialogueLine_Q3a_05	
+	1620373963	Wwizard_DialogueLine_Q3a_04			\NPCs\Dialogue\Quest 3\Wwizard_DialogueLine_Q3a_04	
+	1620373964	Wwizard_DialogueLine_Q3a_03			\NPCs\Dialogue\Quest 3\Wwizard_DialogueLine_Q3a_03	
+	1620373965	Wwizard_DialogueLine_Q3a_02			\NPCs\Dialogue\Quest 3\Wwizard_DialogueLine_Q3a_02	
+	1620373966	Wwizard_DialogueLine_Q3a_01			\NPCs\Dialogue\Quest 3\Wwizard_DialogueLine_Q3a_01	
+	3012415428	Pickup_WeaponType			\Player\General\Pickup_WeaponType	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	3251833556	Player_Weapon_Type			\Player\Player_Weapon_Type	
+	3616336268	Player_Pickup_Type			\Player\Player_Pickup_Type	
+	3639591801	Player_Pickup_ItemType			\Player\Player_Pickup_ItemType	
+
+Switch	ID	Name	Switch Group			Notes
+	490825222	PickAxe	Player_Weapon_Type			
+	703486095	Hammer	Player_Weapon_Type			
+	765201635	Axe	Player_Weapon_Type			
+	2454616260	Sword	Player_Weapon_Type			
+	3732162827	Dagger	Player_Weapon_Type			
+	1222624712	Item	Player_Pickup_Type			
+	3893417221	Weapon	Player_Pickup_Type			
+	632653906	PineCone	Player_Pickup_ItemType			
+	1183067778	Key	Player_Pickup_ItemType			
+	1761501022	Book	Player_Pickup_ItemType			
+	1941802987	Mushroom	Player_Pickup_ItemType			
+	2416868231	CrystalShard	Player_Pickup_ItemType			
+	2979801095	EvilEssence	Player_Pickup_ItemType			
+	3062523257	Misc	Player_Pickup_ItemType			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	467878330	Pickup_WeaponType_Sword	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Android_High\SFX\Objects\Pickups\BAS_Pickup_WeaponType_Sword_01_F48C7750.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Player\Player\Player_Pickup\Pickup_WeaponType\Pickup_WeaponType_Sword		7901
+	472043901	BAS_Pickup_EvilEssence	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Android_High\SFX\Objects\Pickups\BAS_Pickup_EvilEssence_9437DE69.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Player\Player\Player_Pickup\Pickup_ItemType\BAS_Pickup_EvilEssence		146234
+
+Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
+	141653825	Blacksmith_DialogueLine_Q3b_01	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Android_High\Voices\English(US)\Blacksmith_DialogueLine_Q3b_01_C8AD9D0E.wem	141653825.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Blacksmith\Blacksmith_DialogueLine_Q3b_01	
+	141752377	Wwizard_DialogueLine_Q3a_03	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Android_High\Voices\English(US)\Wwizard_VoiceLine_Q3a_2_B3694404.wem	141752377.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q3a_03	
+	184998337	Blacksmith_DialogueLine_Q3b_02	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Android_High\Voices\English(US)\Blacksmith_DialogueLine_Q3b_02_06E2A33E.wem	184998337.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Blacksmith\Blacksmith_DialogueLine_Q3b_02	
+	367614517	Wwizard_DialogueLine_Q3a_10	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Android_High\Voices\English(US)\Wwizard_VoiceLine_Q3a_4_19DCEDCB.wem	367614517.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q3a_10	
+	455178146	Wwizard_DialogueLine_Q3a_08	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Android_High\Voices\English(US)\Wwizard_VoiceLine_Q3a_3_B8F55AA7.wem	455178146.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q3a_08	
+	469922254	Wwizard_DialogueLine_Q3a_04	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Android_High\Voices\English(US)\Wwizard_VoiceLine_Q3a_2_DA1F2E89.wem	469922254.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q3a_04	
+	499607732	Wwizard_DialogueLine_Q3a_09	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Android_High\Voices\English(US)\Wwizard_VoiceLine_Q3a_4_3A2E2805.wem	499607732.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q3a_09	
+	501172588	Blacksmith_DialogueLine_Q3b_03	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Android_High\Voices\English(US)\Blacksmith_DialogueLine_Q3b_03_B11FE122.wem	501172588.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Blacksmith\Blacksmith_DialogueLine_Q3b_03	
+	533092119	Wwizard_DialogueLine_Q3a_06	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Android_High\Voices\English(US)\Wwizard_VoiceLine_Q3a_3_1D2C4E88.wem	533092119.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q3a_06	
+	669867001	Blacksmith_DialogueLine_Q3b_05	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Android_High\Voices\English(US)\Blacksmith_DialogueLine_Q3b_05_3157C9A3.wem	669867001.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Blacksmith\Blacksmith_DialogueLine_Q3b_05	
+	784864794	Wwizard_DialogueLine_Q3a_07	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Android_High\Voices\English(US)\Wwizard_VoiceLine_Q3a_3_1128C396.wem	784864794.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q3a_07	
+	955324476	Wwizard_DialogueLine_Q3a_01	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Android_High\Voices\English(US)\Wwizard_VoiceLine_Q3a_1_04FF6939.wem	955324476.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q3a_01	
+	957684222	Wwizard_DialogueLine_Q3a_05	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Android_High\Voices\English(US)\Wwizard_VoiceLine_Q3a_2_DB718F48.wem	957684222.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q3a_05	
+	961613579	Wwizard_DialogueLine_Q3a_02	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Android_High\Voices\English(US)\Wwizard_VoiceLine_Q3a_1_4A18B9A8.wem	961613579.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q3a_02	
+	1030148940	Blacksmith_DialogueLine_Q3b_04	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Android_High\Voices\English(US)\Blacksmith_DialogueLine_Q3b_04_BCD6F23F.wem	1030148940.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Blacksmith\Blacksmith_DialogueLine_Q3b_04	
+

@@ -1,0 +1,30 @@
+Event	ID	Name			Wwise Object Path	Notes
+	15662850	UI_Button_Up			\UI\Generic\UI_Button_Up	
+	18309885	UI_Button_Enter			\UI\Generic\UI_Button_Enter	
+	156563189	UI_Button_Down			\UI\Generic\UI_Button_Down	
+	750089663	UI_Menu_Teleport			\UI\Menu\UI_Menu_Teleport	
+	1049266392	Ambient_Region_Woodlands			\Ambient\SoundBankSpecific\Ambient_Region_Woodlands	
+	1464993479	UI_Menu_Resume			\UI\Menu\UI_Menu_Resume	
+	1532327793	Music_TitleScreen			\Music\SoundBankSpecific\Music_TitleScreen	
+	2325560497	UI_Button_Exit			\UI\Generic\UI_Button_Exit	
+	3237189652	UI_Menu_Pause			\UI\Menu\UI_Menu_Pause	
+	3474566310	UI_Menu_Select			\UI\Menu\UI_Menu_Select	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	207908541	Time_of_Day			\Ambient\Time_of_Day	
+	3917897988	Distance_to_Player			\Generic\Distance_to_Player	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	180963865	WAG_TitleScreen	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Other\WAG_TitleScreen_V1_D3605DD4.wem		\Interactive Music Hierarchy\Music\Music_TitleScreen\WAG_TitleScreen\WAG_TitleScreen		1458397
+	192562240	Button_Enter	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Interface\BAS_Button_Enter_635B9B45.wem		\Actor-Mixer Hierarchy\Default Work Unit\Non_World\UI\UI\Button\Button_Enter		5787
+	364736820	Inventory_Select	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Interface\BAS_Inventory_Select_73A96AE0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Non_World\UI\UI\Menu\Inventory_Select		7531
+	540584137	Button_Open	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Interface\BAS_Button_Open_DB30470B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Non_World\UI\UI\Menu\Button_Open		3648
+	576059042	Button_Over	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Interface\BAS_Button_Over_4F68C79C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Non_World\UI\UI\Button\Button_Over		1053
+	576804319	Button_Close	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Interface\BAS_Button_Close_DB30470B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Non_World\UI\UI\Menu\Button_Close		3884
+	884177046	Button_Teleport	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Interface\BAS_Button_Teleport_DB30470B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Non_World\UI\UI\Menu\Button_Teleport		21304
+	1069871293	Button_Close	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Interface\BAS_Button_Close_DABAF0AB.wem		\Actor-Mixer Hierarchy\Default Work Unit\Non_World\UI\UI\Button\Button_Close		3534
+
+Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
+	760983670	Ambient_Woodlands_Day_Long	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Ambient\Ambient_Background\BAS_amb_forest_day_background_loop_01_23E9C267_6CB8BDB6.wem	760983670.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\Ambient\Ambiences\Ambiences_Background\Ambient_Regions\Ambient_Region_Woodlands\Day\Ambient_Woodlands_Day_Long	Audiokinetic Inc. All rights reserved. Audio content provided by Bay Area Sound, Inc. With the help of Damian Kastbauer for Lost Chocolate Lab. (c) 2012 Bay Area Sound, Inc. www.basound.com  The Audio Content contained in this file is the property of Bay Area Sound, Inc. Your sole right with regard to this Audio Content is to listen to the Audio  Content as part of this Sample Project.  This Audio Content cannot be used or modified for a commercial purpose nor for public demonstration.
+	888712339	Ambient_Woodlands_Night_Long	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Ambient\Ambient_Background\amb_forest_night_background_loop_04_96EE8C30.wem	888712339.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\Ambient\Ambiences\Ambiences_Background\Ambient_Regions\Ambient_Region_Woodlands\Night\Ambient_Woodlands_Night_Long	Audiokinetic Inc. All rights reserved. Audio content provided by Bay Area Sound, Inc. With the help of Damian Kastbauer for Lost Chocolate Lab. (c) 2012 Bay Area Sound, Inc. www.basound.com  The Audio Content contained in this file is the property of Bay Area Sound, Inc. Your sole right with regard to this Audio Content is to listen to the Audio  Content as part of this Sample Project.  This Audio Content cannot be used or modified for a commercial purpose nor for public demonstration.
+

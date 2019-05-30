@@ -1,0 +1,18 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1882971781	Music_Credits			\Music\SoundBankSpecific\Music_Credits	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	207908541	Time_of_Day			\Ambient\Time_of_Day	
+
+Trigger	ID	Name			Wwise Object Path	Notes
+	780938204	Music_QuestComplete			\Default Work Unit\Music_QuestComplete	
+	1870078530	Adventuress_Death			\Default Work Unit\Adventuress_Death	
+	2029038382	Music_GetItem			\Default Work Unit\Music_GetItem	
+	3921957830	Music_EnemyTheme			\Default Work Unit\Music_EnemyTheme	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	715406799	Music_Woodlands_Mix	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\iOS\SFX\Music\Music_Forest_Mix_D3605DD4.wem		\Interactive Music Hierarchy\Music\Music_Regions\Woodlands_Day\Woodlands_Day_Mix\Music_Woodlands_Mix		14927
+
+Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
+	715406799	Music_Woodlands_Mix	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\iOS\SFX\Music\Music_Forest_Mix_D3605DD4.wem	715406799.wem	\Interactive Music Hierarchy\Music\Music_Regions\Woodlands_Day\Woodlands_Day_Mix\Music_Woodlands_Mix	
+

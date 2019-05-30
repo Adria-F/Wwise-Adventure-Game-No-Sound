@@ -1,0 +1,45 @@
+Event	ID	Name			Wwise Object Path	Notes
+	509318909	Pickup_ItemType			\Player\General\Pickup_ItemType	
+	863080752	Wwizard_DialogueLine_Q6_05			\NPCs\Dialogue\Quest 6\Wwizard_DialogueLine_Q6_05	
+	863080753	Wwizard_DialogueLine_Q6_04			\NPCs\Dialogue\Quest 6\Wwizard_DialogueLine_Q6_04	
+	863080756	Wwizard_DialogueLine_Q6_01			\NPCs\Dialogue\Quest 6\Wwizard_DialogueLine_Q6_01	
+	863080758	Wwizard_DialogueLine_Q6_03			\NPCs\Dialogue\Quest 6\Wwizard_DialogueLine_Q6_03	
+	863080759	Wwizard_DialogueLine_Q6_02			\NPCs\Dialogue\Quest 6\Wwizard_DialogueLine_Q6_02	
+	3012415428	Pickup_WeaponType			\Player\General\Pickup_WeaponType	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	3251833556	Player_Weapon_Type			\Player\Player_Weapon_Type	
+	3616336268	Player_Pickup_Type			\Player\Player_Pickup_Type	
+	3639591801	Player_Pickup_ItemType			\Player\Player_Pickup_ItemType	
+
+Switch	ID	Name	Switch Group			Notes
+	490825222	PickAxe	Player_Weapon_Type			
+	703486095	Hammer	Player_Weapon_Type			
+	765201635	Axe	Player_Weapon_Type			
+	2454616260	Sword	Player_Weapon_Type			
+	3732162827	Dagger	Player_Weapon_Type			
+	1222624712	Item	Player_Pickup_Type			
+	3893417221	Weapon	Player_Pickup_Type			
+	632653906	PineCone	Player_Pickup_ItemType			
+	1183067778	Key	Player_Pickup_ItemType			
+	1761501022	Book	Player_Pickup_ItemType			
+	1941802987	Mushroom	Player_Pickup_ItemType			
+	2416868231	CrystalShard	Player_Pickup_ItemType			
+	2979801095	EvilEssence	Player_Pickup_ItemType			
+	3062523257	Misc	Player_Pickup_ItemType			
+
+Modulator LFO	ID	Name			Wwise Object Path	Notes
+	397902884	Modulator LFO (Custom)				
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	190170041	Pickup_Book	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Objects\Pickups\BAS_Pickup_Book_01_86F919C5.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Player\Player\Player_Pickup\Pickup_ItemType\Pickup_Book		51366
+	474305653	Pickup_Misc	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Objects\Pickup_F9CAD066.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Player\Player\Player_Pickup\Pickup_ItemType\Pickup_Misc		22240
+	1008720031	Pickup_WeaponType_Hammer	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\SFX\Objects\Pickups\BAS_Pickup_WeaponType_Hammer_01_EA4E482E.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Player\Player\Player_Pickup\Pickup_WeaponType\Pickup_WeaponType_Hammer		74292
+
+Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
+	161027881	Wwizard_DialogueLine_Q6_02	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\Voices\English(US)\Wwizard_VoiceLine_Q6_1_0CFF8780.wem	161027881.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q6_02	
+	260687181	Wwizard_DialogueLine_Q6_05	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\Voices\English(US)\Wwizard_VoiceLine_Q6_3_BCD6F23F.wem	260687181.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q6_05	
+	414569993	Wwizard_DialogueLine_Q6_03	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\Voices\English(US)\Wwizard_VoiceLine_Q6_2_8A7028A1.wem	414569993.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q6_03	
+	499136652	Wwizard_DialogueLine_Q6_01	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\Voices\English(US)\Wwizard_VoiceLine_Q6_1_4B8D7AD4.wem	499136652.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q6_01	
+	859741990	Wwizard_DialogueLine_Q6_04	G:\WPAG_Packaging\wpa-game\Wwise Project\.cache\Mac\Voices\English(US)\Wwizard_VoiceLine_Q6_2_DCC0E9F3.wem	859741990.wem	\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\QuestGivers\Dialogue Wwizard\Wwizard_DialogueLine_Q6_04	
+
