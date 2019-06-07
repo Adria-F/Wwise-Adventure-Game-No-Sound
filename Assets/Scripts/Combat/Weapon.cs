@@ -93,6 +93,13 @@ public class Weapon : MonoBehaviour, IInteractable
         }
     }
 
+    public GameObject lastHit()
+    {
+        if (alreadyHitObjects.Count > 0)
+            return alreadyHitObjects[alreadyHitObjects.Count-1];
+        return null;
+    }
+
     void Start()
     {
         prefab = gameObject;

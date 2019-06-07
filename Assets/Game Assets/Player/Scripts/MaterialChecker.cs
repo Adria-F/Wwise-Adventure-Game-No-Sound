@@ -33,18 +33,21 @@ public class MaterialChecker : MonoBehaviour
         }
     }
 
-    public void CheckMaterial(GameObject go)
+    public SoundMaterial.Materials CheckMaterial(GameObject go)
     {
         if (Physics.Raycast(trn.position + checkOffset, direction, out hit, layermask))
         {
             SoundMaterial sm = hit.collider.gameObject.GetComponent<SoundMaterial>();
 
+            return sm.material;
             if (sm != null)
             {
                 // HINT: Check this
                 //sm.material.SetValue(go);
             }
         }
+
+        return SoundMaterial.Materials.DIRT;
     }
 
     public int GetMaterial()
@@ -55,7 +58,7 @@ public class MaterialChecker : MonoBehaviour
 
             if (sm != null)
             {
-                return sm.material;
+                //return sm.material;
             }
         }
         return -1;

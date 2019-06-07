@@ -9,14 +9,22 @@ using System.Collections;
 
 public class AdventuressAnimationEventHandler : MonoBehaviour
 {
-    public AudioClip leftFootStep;
-    public AudioClip rightFootStep;
+    [Header("Step Sounds")]
+    public AudioClip[] dirtSteps;
+    public AudioClip[] grassSteps;
+    public AudioClip[] rubbleSteps;
+    public AudioClip[] sandSteps;
+    public AudioClip[] stoneSteps;
+    public AudioClip[] waterSteps;
+    public AudioClip[] woodSteps;
 
+    [Header("Weapons pickup sound")]
     public AudioClip dagger;
     public AudioClip sword;
     public AudioClip axe;
     public AudioClip pickaxe;
     public AudioClip hammer;
+    public AudioClip swing;
 
     [Header("Object Links")]
     [SerializeField]
@@ -94,8 +102,7 @@ public class AdventuressAnimationEventHandler : MonoBehaviour
                         // HINT: Play left footstep sound
                         particlePosition = foot_L.transform.position;
                         FootstepParticles(particlePosition);
-                        AudioSource audioSource = GetComponent<AudioSource>();
-                        audioSource.PlayOneShot(leftFootStep, 0.7F);
+                        foot_L.PlayFootstepSound();
                     }
                 }
                 else
@@ -105,8 +112,7 @@ public class AdventuressAnimationEventHandler : MonoBehaviour
                         // HINT: Play right footstep sound
                         particlePosition = foot_R.transform.position;
                         FootstepParticles(particlePosition);
-                        AudioSource audioSource = GetComponent<AudioSource>();
-                        audioSource.PlayOneShot(rightFootStep, 0.7F);
+                        foot_R.PlayFootstepSound();
                     }
                 }
             }
@@ -152,6 +158,27 @@ public class AdventuressAnimationEventHandler : MonoBehaviour
         // HINT: PlayerManager.Instance.weaponSlot contains the selected weapon;
         // HINT: This is a good place to play the weapon swing sounds
         Weapon EquippedWeapon = PlayerManager.Instance.equippedWeaponInfo;
+        AudioSource audioSource = GetComponent<AudioSource>();
+        float volume = 1.0f;
+        switch(EquippedWeapon.weaponType)
+        {
+            case WeaponTypes.Dagger:
+                volume = 0.05f;
+                break;
+            case WeaponTypes.Sword:
+                volume = 0.1f;
+                break;
+            case WeaponTypes.Axe:
+                volume = 0.4f;
+                break;
+            case WeaponTypes.PickAxe:
+                volume = 0.3f;
+                break;
+            case WeaponTypes.Hammer:
+                volume = 0.5f;
+                break;
+        }
+        audioSource.PlayOneShot(swing, volume);
     }
 
     public void PauseMovement()
@@ -188,6 +215,26 @@ public class AdventuressAnimationEventHandler : MonoBehaviour
     {
         PlayerManager.Instance.PickUpEvent();
         // HINT: This is a good place to play the Get item sound and stinger
+        AudioSource audioSource = GetComponent<AudioSource>();
+        Weapon EquippedWeapon = PlayerManager.Instance.equippedWeaponInfo;
+        switch(EquippedWeapon.weaponType)
+        {
+            case WeaponTypes.Dagger:
+                audioSource.PlayOneShot(dagger, 0.2f);
+                break;
+            case WeaponTypes.Sword:
+                audioSource.PlayOneShot(sword, 0.2f);
+                break;
+            case WeaponTypes.Axe:
+                audioSource.PlayOneShot(axe, 0.2f);
+                break;
+            case WeaponTypes.PickAxe:
+                audioSource.PlayOneShot(pickaxe, 0.2f);
+                break;
+            case WeaponTypes.Hammer:
+                audioSource.PlayOneShot(hammer, 0.2f);
+                break;
+        }
     }
 
     public void WeaponSound()
@@ -195,23 +242,11 @@ public class AdventuressAnimationEventHandler : MonoBehaviour
         Weapon EquippedWeapon = PlayerManager.Instance.equippedWeaponInfo;
         // HINT: This is a good place to play equipped weapon impact sound
         AudioSource audioSource = GetComponent<AudioSource>();
-        switch (EquippedWeapon.weaponType)
-        {
-            case WeaponTypes.Dagger:
-                audioSource.PlayOneShot(dagger);
-                break;
-            case WeaponTypes.Sword:
-                audioSource.PlayOneShot(sword);
-                break;
-            case WeaponTypes.Axe:
-                audioSource.PlayOneShot(axe);
-                break;
-            case WeaponTypes.PickAxe:
-                audioSource.PlayOneShot(pickaxe);
-                break;
-            case WeaponTypes.Hammer:
-                audioSource.PlayOneShot(hammer);
-                break;
-        }
+
+        SoundMaterial.Materials mat = SoundMaterial.Materials.STONE;
+        if (EquippedWeapon.lastHit().GetComponent<SoundMaterial>())
+            mat = EquippedWeapon.lastHit().GetComponent<SoundMaterial>().material;
+
+        audioSource.PlayOneShot(GetComponent<WeaponSwitch>().requestSound(EquippedWeapon.weaponType, mat), 0.05f);
     }
 }
