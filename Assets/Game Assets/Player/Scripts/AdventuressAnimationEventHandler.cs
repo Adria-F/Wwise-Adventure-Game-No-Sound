@@ -12,6 +12,12 @@ public class AdventuressAnimationEventHandler : MonoBehaviour
     public AudioClip leftFootStep;
     public AudioClip rightFootStep;
 
+    public AudioClip dagger;
+    public AudioClip sword;
+    public AudioClip axe;
+    public AudioClip pickaxe;
+    public AudioClip hammer;
+
     [Header("Object Links")]
     [SerializeField]
     private Animator playerAnimator;
@@ -145,6 +151,7 @@ public class AdventuressAnimationEventHandler : MonoBehaviour
         Weapon W = PlayerManager.Instance.equippedWeaponInfo;
         // HINT: PlayerManager.Instance.weaponSlot contains the selected weapon;
         // HINT: This is a good place to play the weapon swing sounds
+        Weapon EquippedWeapon = PlayerManager.Instance.equippedWeaponInfo;
     }
 
     public void PauseMovement()
@@ -187,5 +194,24 @@ public class AdventuressAnimationEventHandler : MonoBehaviour
     {
         Weapon EquippedWeapon = PlayerManager.Instance.equippedWeaponInfo;
         // HINT: This is a good place to play equipped weapon impact sound
+        AudioSource audioSource = GetComponent<AudioSource>();
+        switch (EquippedWeapon.weaponType)
+        {
+            case WeaponTypes.Dagger:
+                audioSource.PlayOneShot(dagger);
+                break;
+            case WeaponTypes.Sword:
+                audioSource.PlayOneShot(sword);
+                break;
+            case WeaponTypes.Axe:
+                audioSource.PlayOneShot(axe);
+                break;
+            case WeaponTypes.PickAxe:
+                audioSource.PlayOneShot(pickaxe);
+                break;
+            case WeaponTypes.Hammer:
+                audioSource.PlayOneShot(hammer);
+                break;
+        }
     }
 }
