@@ -98,6 +98,8 @@ public class DefaultSpellcraft : MonoBehaviour
 
             // SPELL SOUND
             // HINT: Spell charge start sound effect should be played here
+            AudioSource audioSource = transform.parent.gameObject.GetComponent<AudioSource>();
+            audioSource.PlayOneShot(charge_loop);
             startRotation = transform.rotation;
         }
     }
