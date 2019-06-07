@@ -18,6 +18,11 @@ public class EvilHeadAI : Creature
     [Header("Wwise")]
     public float MovementRTPC;
 
+    AudioSource[] E_H_audios;
+    AudioSource E_H_hover;
+    AudioSource E_H_telegraph;
+    AudioSource E_H_bite;
+
     #region private variables
     private Vector3 targetLocation = Vector3.zero;
     private IEnumerator chargeRoutine;
@@ -37,11 +42,29 @@ public class EvilHeadAI : Creature
         {
             anim = GetComponent<Animator>();
         }
+
+        if (E_H_audios == null)
+        {
+            //All sounds
+            E_H_audios = GetComponents<AudioSource>();
+
+            //hover sound
+            E_H_hover = E_H_audios[0];
+            E_H_hover.loop = true;
+
+            //telegraph sound
+            E_H_telegraph = E_H_audios[1];
+
+            //All sounds
+            E_H_bite = E_H_audios[2];
+
+        }
     }
 
     public override void Start(){
 		base.Start();
         // HINT: Hover sound start here
+        E_H_hover.Play();
 	}
 
     public override void OnSpotting()
@@ -72,7 +95,9 @@ public class EvilHeadAI : Creature
         thisNavMeshAgent.destination = transform.position;
         targetLocation = targetOfNPC.transform.position + Vector3.up;
         StartCoroutine(RotateTowardsTarget(targetLocation, 1f));
+        
         // HINT: The head is sending a telegraph attack, this might need a sound effect
+        E_H_telegraph.Play();
     }
 
 
@@ -113,6 +138,7 @@ public class EvilHeadAI : Creature
     {
         //print(Time.realtimeSinceStartup + ": ChargeTowardsPlayer");
         // HINT: Charge started, a telegrpah sound could be useful here
+        E_H_telegraph.Play();
 
         Vector3 currentPosition = transform.position;
         Vector3 destination = targetLocation + ((targetLocation) - currentPosition).normalized * 2f;
@@ -159,6 +185,7 @@ public class EvilHeadAI : Creature
         SetMovementSpeed(0f);
         //print(Time.realtimeSinceStartup + ": Explode");
         // HiNT: We should stop hover sound at this point
+        E_H_hover.Stop();
 
         GameObject fx = (GameObject)Instantiate(deathFX, transform.position, Quaternion.identity);
         Destroy(fx, 5f);
@@ -184,5 +211,6 @@ public class EvilHeadAI : Creature
     public void PlayBiteSound()
     {
         // HINT: Looks like a good place to play the bite sound
+        E_H_bite.Play();
     }
 }
