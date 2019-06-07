@@ -37,6 +37,9 @@ public class DefaultSpellcraft : MonoBehaviour
 
     public int SpellSelect = 0;
 
+    [Header("Sounds")]
+    public AudioClip charge_end;
+    public AudioClip charge_loop;
 
     [Header("WWISE")]
     public float SpellChargeLevel = 0f;
@@ -64,6 +67,8 @@ public class DefaultSpellcraft : MonoBehaviour
     public void DisableMagic()
     {
         // HINT: Spell stops charging, you may want to stop the charge effect here
+        AudioSource audioSource = transform.parent.gameObject.GetComponent<AudioSource>();
+        audioSource.PlayOneShot(charge_end);
         Spellcraft[SpellSelect].Charge.OnCharge[0].Deactivate();
         InputManager.OnUseDown -= OnCharge;
         InputManager.OnUseUp -= OffCharge;

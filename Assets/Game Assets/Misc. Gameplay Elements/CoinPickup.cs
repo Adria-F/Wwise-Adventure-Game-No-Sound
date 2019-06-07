@@ -16,6 +16,7 @@ public class CoinPickup : MonoBehaviour {
 	void Start(){
         if (playSpawnSoundAtSpawn){
             // HINT: You might want to play the Coin pickup sound here
+            GetComponent<AudioSource>().Play();
         }
 	}
 
