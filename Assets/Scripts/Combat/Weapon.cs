@@ -233,6 +233,7 @@ public class Weapon : MonoBehaviour, IInteractable
         //print("Impact");
         alreadyHitObjects.Add(HitObj);
         // HINT: Play weapon impact event here, weapon type = transform.parent.gameObject
+        GameObject.FindGameObjectWithTag("Player").GetComponent<AdventuressAnimationEventHandler>().WeaponSound();
 
     }
 
