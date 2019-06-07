@@ -20,8 +20,10 @@ public class EvilHeadAI : Creature
 
     AudioSource[] E_H_audios;
     AudioSource E_H_hover;
-    AudioSource E_H_telegraph;
-    AudioSource E_H_bite;
+    AudioSource E_H_souds;
+
+    public AudioClip E_H_telegraph;
+    public AudioClip E_H_bite;
 
     #region private variables
     private Vector3 targetLocation = Vector3.zero;
@@ -47,17 +49,8 @@ public class EvilHeadAI : Creature
         {
             //All sounds
             E_H_audios = GetComponents<AudioSource>();
-
-            //hover sound
             E_H_hover = E_H_audios[0];
-            E_H_hover.loop = true;
-
-            //telegraph sound
-            E_H_telegraph = E_H_audios[1];
-
-            //All sounds
-            E_H_bite = E_H_audios[2];
-
+            E_H_souds = E_H_audios[1];
         }
     }
 
@@ -65,7 +58,8 @@ public class EvilHeadAI : Creature
 		base.Start();
         // HINT: Hover sound start here
         E_H_hover.Play();
-	}
+        E_H_hover.loop = true;
+    }
 
     public override void OnSpotting()
     {
@@ -95,9 +89,12 @@ public class EvilHeadAI : Creature
         thisNavMeshAgent.destination = transform.position;
         targetLocation = targetOfNPC.transform.position + Vector3.up;
         StartCoroutine(RotateTowardsTarget(targetLocation, 1f));
-        
+
         // HINT: The head is sending a telegraph attack, this might need a sound effect
-        E_H_telegraph.Play();
+        if(E_H_souds.isPlaying==false)
+        {
+            E_H_souds.PlayOneShot(E_H_telegraph,0.25f);
+        }
     }
 
 
@@ -138,7 +135,10 @@ public class EvilHeadAI : Creature
     {
         //print(Time.realtimeSinceStartup + ": ChargeTowardsPlayer");
         // HINT: Charge started, a telegrpah sound could be useful here
-        E_H_telegraph.Play();
+        if (E_H_souds.isPlaying == false)
+        {
+            E_H_souds.PlayOneShot(E_H_telegraph,0.25f);
+        }
 
         Vector3 currentPosition = transform.position;
         Vector3 destination = targetLocation + ((targetLocation) - currentPosition).normalized * 2f;
@@ -211,6 +211,6 @@ public class EvilHeadAI : Creature
     public void PlayBiteSound()
     {
         // HINT: Looks like a good place to play the bite sound
-        E_H_bite.Play();
+        E_H_souds.PlayOneShot(E_H_bite);
     }
 }
