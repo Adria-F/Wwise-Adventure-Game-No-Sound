@@ -21,6 +21,12 @@ public class EvilSpitPlantProjectile : MonoBehaviour
 
     public bool ignoreCollisionWithWwizard = false;
 
+    [Header("Audio Projectile:")]
+    AudioSource E_P_audio;
+    public AudioClip E_P_music;
+    public AudioClip E_P_hit;
+    public AudioClip E_P_miss;
+
     [HideInInspector]
     public GameObject parent;
 
@@ -36,8 +42,11 @@ public class EvilSpitPlantProjectile : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         PlayerCamera.OnCameraEventStart += ForceExplode;
 
+        E_P_audio = GetComponent<AudioSource>();
+
         movementRoutine = MoveSpitBullet();
         StartCoroutine(movementRoutine);
+
     }
 
     private void OnDisable()
@@ -48,6 +57,13 @@ public class EvilSpitPlantProjectile : MonoBehaviour
     IEnumerator MoveSpitBullet()
     {
         // HINT: Spit bullet started moving, you might want to start playing its continuous sound here
+        if(E_P_audio.isPlaying==false)
+        {
+            E_P_audio.clip = E_P_music;
+            E_P_audio.Play();
+            E_P_audio.loop = true;
+        }
+
         while (time < duration)
         {
             rb.velocity = transform.forward * speed;
@@ -120,6 +136,11 @@ public class EvilSpitPlantProjectile : MonoBehaviour
             isExploding = true;
 
             // HINT: Spit bullet stopped, you might want to stop playing its continuous sound here
+            if (E_P_audio.clip == E_P_music)
+            {
+                E_P_audio.Stop();
+            }
+            E_P_audio.loop = false;
 
             GetComponent<Collider>().enabled = false;
             time = duration;
@@ -131,10 +152,12 @@ public class EvilSpitPlantProjectile : MonoBehaviour
             if (hitSomething)
             {
                 // HINT: Explosion did hit something, you may want to play the explosion hit sound here
+                E_P_audio.PlayOneShot(E_P_hit);
             }
             else
             {
                 // HINT: Explosion didn't hit something, you may want to play the explosion miss sound here
+                E_P_audio.PlayOneShot(E_P_miss);
             }
 
             Destroy(go, 5f);
