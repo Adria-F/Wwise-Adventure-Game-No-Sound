@@ -63,7 +63,7 @@ public class GameManager : Singleton<GameManager>
     #endregion
 
     [HideInInspector]
-    public GameObject MusicGameObject;
+    GameObject MusicGameObject;
     AudioSource G_M_audio;
 
     public AudioClip defaultDay;
