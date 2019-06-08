@@ -169,7 +169,8 @@ public class Weapon : MonoBehaviour, IInteractable
                 Vector3 playerToHitPoint = col.contacts[0].point - PlayerManager.Instance.player.transform.position;
                 Attack attack = new Attack(BaseDamage, playerToHitPoint, knockbackStrength, SwingTypes.None, weaponType, col.contacts[0].point);
 
-                AnimatorStateInfo currentAnimation = PlayerManager.Instance.playerAnimator.GetCurrentAnimatorStateInfo(0);
+                // THIS IS NOT CALLED IF NOT HITTING AN OBJECT...
+                /*AnimatorStateInfo currentAnimation = PlayerManager.Instance.playerAnimator.GetCurrentAnimatorStateInfo(0);
                 if (currentAnimation.IsName("Player_RightSwing"))
                 {
                     attack.swingType = SwingTypes.Right;
@@ -184,7 +185,7 @@ public class Weapon : MonoBehaviour, IInteractable
                 {
                     attack.swingType = SwingTypes.Top;
                     // HINT: Weapon combo state 3, you may want to take this into account when playing the weapon swing sound
-                }
+                }*/
 
                 if (!alreadyHitObjects.Contains(col.gameObject))
                 {

@@ -313,6 +313,8 @@ public class PlayerManager : Singleton<PlayerManager>
                 {
                     playerAnimator.SetTrigger(deathNormalHash);
                 }
+                AdventuressAnimationEventHandler adventuress = GameObject.FindGameObjectWithTag("Player").GetComponent<AdventuressAnimationEventHandler>();
+                GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>().PlayOneShot(adventuress.deathSounds[Random.Range(0, adventuress.deathSounds.Length)], 0.5f);
             }
             else
             {

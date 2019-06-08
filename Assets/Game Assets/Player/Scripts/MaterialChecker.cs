@@ -38,10 +38,10 @@ public class MaterialChecker : MonoBehaviour
         if (Physics.Raycast(trn.position + checkOffset, direction, out hit, layermask))
         {
             SoundMaterial sm = hit.collider.gameObject.GetComponent<SoundMaterial>();
-
-            return sm.material;
+           
             if (sm != null)
             {
+                return sm.material;
                 // HINT: Check this
                 //sm.material.SetValue(go);
             }

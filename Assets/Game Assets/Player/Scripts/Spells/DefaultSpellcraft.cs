@@ -40,6 +40,7 @@ public class DefaultSpellcraft : MonoBehaviour
     [Header("Sounds")]
     public AudioClip charge_end;
     public AudioClip charge_loop;
+    public AudioClip spellCast;
 
     [Header("WWISE")]
     public float SpellChargeLevel = 0f;
@@ -47,6 +48,7 @@ public class DefaultSpellcraft : MonoBehaviour
     #region private variables
     private Quaternion startRotation;
     private Vector3 targetPosition;
+    private float startVolume = 0.0f;
     //Chached animator hashes
     private readonly int canShootMagicHash = Animator.StringToHash("CanShootMagic");
     private readonly int shootMagicHash = Animator.StringToHash("ShootMagic");
@@ -66,9 +68,7 @@ public class DefaultSpellcraft : MonoBehaviour
 
     public void DisableMagic()
     {
-        // HINT: Spell stops charging, you may want to stop the charge effect here
-        AudioSource audioSource = transform.parent.gameObject.GetComponent<AudioSource>();
-        audioSource.PlayOneShot(charge_end);
+        // HINT: Spell stops charging, you may want to stop the charge effect here       
         Spellcraft[SpellSelect].Charge.OnCharge[0].Deactivate();
         InputManager.OnUseDown -= OnCharge;
         InputManager.OnUseUp -= OffCharge;
@@ -99,6 +99,9 @@ public class DefaultSpellcraft : MonoBehaviour
             // SPELL SOUND
             // HINT: Spell charge start sound effect should be played here
             AudioSource audioSource = transform.parent.gameObject.GetComponent<AudioSource>();
+            startVolume = audioSource.volume;
+            audioSource.volume = 0.0f;
+            audioSource.loop = true;
             audioSource.PlayOneShot(charge_loop);
             startRotation = transform.rotation;
         }
@@ -161,12 +164,21 @@ public class DefaultSpellcraft : MonoBehaviour
         Spellcraft[SpellSelect].Charge.ChargeAmount = charge;
         SpellChargeLevel = Spellcraft[SpellSelect].Charge.ChargeAmount * 100;
         // HINT: You might want to take the spell charge level change into account to modify the spell charge sound appropiately
+        AudioSource audioSource = transform.parent.gameObject.GetComponent<AudioSource>();
+        if (charge > 0.0f && audioSource.loop)//Check that it is charging
+        {            
+            audioSource.volume = startVolume * charge;
+        }
     }
 
     void OffCharge()
     {
         PlayerManager.Instance.ResumeAttacking(this.gameObject);
         PlayerManager.Instance.ResumeMovement(this.gameObject);
+        AudioSource audioSource = transform.parent.gameObject.GetComponent<AudioSource>();
+        audioSource.volume = startVolume;
+        audioSource.loop = false;
+        audioSource.Stop();
         if (Spellcraft[SpellSelect].IsAvailable)
         {
             PlayerManager.Instance.playerAnimator.ResetTrigger(chargeMagicHash);
@@ -175,7 +187,8 @@ public class DefaultSpellcraft : MonoBehaviour
 
             if (PlayerManager.Instance.playerAnimator.GetBool(canShootMagicHash))
             {
-                // HINT: Spell charge stop sound effect should be played here
+                // HINT: Spell charge stop sound effect should be played here               
+                audioSource.PlayOneShot(charge_end);
                 // Activate Spells
                 PlayerManager.Instance.playerAnimator.SetBool(canShootMagicHash, false);
                 for (int R = 0; R < Spellcraft[SpellSelect].Release.OnRelease.Count; R++)
@@ -188,6 +201,7 @@ public class DefaultSpellcraft : MonoBehaviour
                     // SPELL SOUND
                     SpellChargeLevel = Spellcraft[SpellSelect].Charge.ChargeAmount * 100;
                     // HINT: Spell is casted, you might want to play the appropiate sound here
+                    audioSource.PlayOneShot(spellCast);
                 }
             }
         }
