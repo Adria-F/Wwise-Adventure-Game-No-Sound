@@ -47,6 +47,8 @@ public class QuestManager : Singleton<QuestManager>
 
     public static string NameOfCurrentQuest;
 
+    private AudioSource audio_source;
+
     [HideInInspector]
     public string QuestBarInformation = "";
     [HideInInspector]
@@ -57,6 +59,7 @@ public class QuestManager : Singleton<QuestManager>
     void Awake()
     {
         QuestItems = new List<QuestItemInfo>();
+        audio_source = GameObject.FindGameObjectWithTag("Menu/UI").GetComponent<AudioSource>();
     }
 
     public static void PushQuestBarUpdate()
@@ -96,6 +99,8 @@ public class QuestManager : Singleton<QuestManager>
     {
         float percentage = ((float)mainQuestProgress / (float)AmountOfQuests) * 100f;
         QuestProgressRTPC = percentage;
+        audio_source.PlayOneShot(Resources.Load<AudioClip>("Audio/Interface/BAS_QuestRoll_Open"));
         // HINT: Progress RPTC changed, do you need to update anything here?
+
     }
 }

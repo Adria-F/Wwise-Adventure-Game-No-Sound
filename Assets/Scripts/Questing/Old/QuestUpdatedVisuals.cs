@@ -33,12 +33,14 @@ public class QuestUpdatedVisuals : MonoBehaviour
     //Cached animator hashes
     private readonly int showTrigger = Animator.StringToHash("Show");
     private readonly int hideTrigger = Animator.StringToHash("Hide");
+
+    private AudioSource audio_source;
     #endregion
 
     public void OnEnable()
     {
         questGiver.OnNewQuest += UpdateQuestInfo;
-
+        audio_source = GameObject.FindGameObjectWithTag("Menu/UI").GetComponent<AudioSource>();
     }
 
     public void OnDisable()
@@ -58,13 +60,16 @@ public class QuestUpdatedVisuals : MonoBehaviour
 
         questTitleText.SetKey(currentQuest.TitleKey);
         questDescriptionText.SetKey(currentQuest.DescriptionKey);
+
+        
     }
 
     public void ShowQuestRoll()
     {
         if (!isShowing)
         {
-            questUpdatedAnimator.SetTrigger(showTrigger);
+            questUpdatedAnimator.SetTrigger(showTrigger);            
+
             isShowing = true;
         }
     }
@@ -74,6 +79,7 @@ public class QuestUpdatedVisuals : MonoBehaviour
         if (isShowing)
         {
             questUpdatedAnimator.SetTrigger(hideTrigger);
+
             isShowing = false;
         }
     }
@@ -85,10 +91,10 @@ public class QuestUpdatedVisuals : MonoBehaviour
 
     private IEnumerator ShowAndHide()
     {
+        audio_source.PlayOneShot(Resources.Load<AudioClip>("Audio/Interface/BAS_QuestRoll_Open"));
         ShowQuestRoll();
-
         yield return new WaitForSeconds(ShowDuration);
-
         HideQuestRoll();
+        audio_source.PlayOneShot(Resources.Load<AudioClip>("Audio/Interface/BAS_QuestRoll_Close"));
     }
 }

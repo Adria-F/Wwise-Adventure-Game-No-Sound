@@ -46,6 +46,7 @@ namespace QuestSystem
 
         private Coroutine InitializeQuest(int questIdx)
         {
+
             return StartCoroutine(QuestInit(questIdx));
         }
 
@@ -63,7 +64,7 @@ namespace QuestSystem
             }
 
             QuestlineProgressionRTPC = GetNormalizedQuestlineProgress() * 100f;
-            // HINT: Questline progression RTPC changed, does this affect to any sound?            
+            // HINT: Questline progression RTPC changed, does this affect to any sound?      
             initializingNewQuest = false;
         }
 
@@ -85,21 +86,24 @@ namespace QuestSystem
             if(OnQuestCompleted != null)
             {
                 OnQuestCompleted(quest);
+
             }
 
             currentQuestIdx++;
             if (currentQuestIdx < Quests.Count)
             {
                 // HINT: Questline complete, you may want to play a sound here                                
-                audio_source.PlayOneShot(Resources.Load<AudioClip>("Audio/Interface/BAS_Quest_CompleteCollection_01"));                
+
+                audio_source.PlayOneShot(Resources.Load<AudioClip>("Audio/Interface/BAS_Quest_CompleteCollection_01"));
                 InitializeQuest(currentQuestIdx);
             }
             else
             {
                 // HINT: Questline complete, you may want to play a sound here           
-                audio_source.PlayOneShot(Resources.Load<AudioClip>("Audio/Interface/BAS_Quest_CompleteCollection_02"));
+
                 if (OnQuestlineComplete != null)
                 {
+
                     OnQuestlineComplete(this);
                 }
             }
@@ -110,10 +114,12 @@ namespace QuestSystem
             if (currentQuestIdx != targetQuestIdx)
             {
                 StartCoroutine(ForcedQuestlineAdvance(targetQuestIdx));
+                
             }
             else
             {
                 Quests[currentQuestIdx].RestartQuest();
+                Debug.Log("Resetting quest ");
             }
         }
 
@@ -132,7 +138,7 @@ namespace QuestSystem
                 {
                     yield return Quests[currentQuestIdx].ForceCompleteQuest();
                     i = currentQuestIdx;
-                    //yield return Quests[i].ForceCompleteQuest();
+                    yield return Quests[i].ForceCompleteQuest();
                 }
                 else            //Moving backwards in the questline
                 {
@@ -141,13 +147,13 @@ namespace QuestSystem
                     i--;
                 }
 
-                //i += 1 * sign;
+                i += 1 * sign;
             }
             currentQuestIdx = targetQuestIdx;
-            //Debug.Log("Resetting quest " + currentQuestIdx);
-            //yield return Quests[currentQuestIdx].ResetQuest();
-            //Debug.Log("(forced) Initializing quest " + currentQuestIdx);
-            //yield return InitializeQuest(currentQuestIdx);
+            Debug.Log("Resetting quest " + currentQuestIdx);
+            yield return Quests[currentQuestIdx].ResetQuest();
+            Debug.Log("(forced) Initializing quest " + currentQuestIdx);
+            yield return InitializeQuest(currentQuestIdx);
 
             //new
             if(sign < 0)
@@ -162,10 +168,11 @@ namespace QuestSystem
             {
                 OnQuestlineForcedChangeEnded(this);
             }
+            audio_source.PlayOneShot(Resources.Load<AudioClip>("Audio/Interface/BAS_Quest_CompleteCollection_02"));
         }
 
         public bool IsInitializingQuest()
-        {
+        {           
             return initializingNewQuest;
         }
 
