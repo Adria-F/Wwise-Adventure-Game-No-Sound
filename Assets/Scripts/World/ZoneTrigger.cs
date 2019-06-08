@@ -10,6 +10,8 @@ public class ZoneTrigger : MonoBehaviour
 {
     //public AK.Wwise.State MusicState;
     public bool isSafeZone = false;
+    public AudioClip music_Day;
+    public AudioClip music_Night;
 
     void OnTriggerEnter(Collider col)
     {

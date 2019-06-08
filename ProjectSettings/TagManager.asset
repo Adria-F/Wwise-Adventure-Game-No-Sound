@@ -18,6 +18,7 @@ TagManager:
   - TeleportDestination
   - Wwizard
   - Menu/UI
+  - SoundZones
   layers:
   - Default
   - TransparentFX
