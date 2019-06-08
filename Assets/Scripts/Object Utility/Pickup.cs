@@ -7,6 +7,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Events;
+using QuestSystem;
 
 public class Pickup : MonoBehaviour, IInteractable
 {
@@ -33,7 +34,9 @@ public class Pickup : MonoBehaviour, IInteractable
 	private bool inConversation = false;
 	private bool isFocus = false;
 	private ObjectOutline objectOutline;
-	#endregion
+    #endregion
+
+    ItemType type;
 
 	//Events
 	public UnityEvent OnBecameFocus;
@@ -46,7 +49,12 @@ public class Pickup : MonoBehaviour, IInteractable
 
 	void OnEnable()
 	{
-       // HINT: Good place to save the pickup type
+        // HINT: Good place to save the pickup type
+        QuestItem item = gameObject.GetComponent<QuestItem>();
+        if (item)
+        {
+            type = item.itemType;
+        }
         if (transform.childCount > 0)
 		{
 			Transform T = transform.Find("Outline");
@@ -186,8 +194,47 @@ public class Pickup : MonoBehaviour, IInteractable
 
 			if (interactionSound)
 			{
-				// HINT: Play the sound for this pickup
-			}
+                AdventuressAnimationEventHandler adventuress = GameObject.FindGameObjectWithTag("Player").GetComponent<AdventuressAnimationEventHandler>();
+                AudioSource audioSource = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>();
+                switch (type)
+                {
+                    case ItemType.Book:
+                        audioSource.PlayOneShot(adventuress.book, 0.3f);
+                        break;
+                    case ItemType.EvilEssence:
+                        audioSource.PlayOneShot(adventuress.evilEssence, 0.1f);
+                        break;
+                    case ItemType.Mushroom:
+                        audioSource.PlayOneShot(adventuress.mushroom, 0.3f);
+                        break;
+                    case ItemType.CrystalShard:
+                        audioSource.PlayOneShot(adventuress.crystalShard, 0.3f);
+                        break;
+                    case ItemType.Pinecone:
+                        audioSource.PlayOneShot(adventuress.pinecone, 0.3f);
+                        break;
+                    case ItemType.Key:
+                        audioSource.PlayOneShot(adventuress.key, 0.3f);
+                        break;
+                    case ItemType.Scroll:
+                        audioSource.PlayOneShot(adventuress.scroll, 0.3f);
+                        break;
+                    case ItemType.Sword:
+                        audioSource.PlayOneShot(adventuress.sword, 0.3f);
+                        break;
+                    case ItemType.Hammer:
+                        audioSource.PlayOneShot(adventuress.hammer, 0.3f);
+                        break;
+                    case ItemType.Axe:
+                        audioSource.PlayOneShot(adventuress.axe, 0.3f);
+                        break;
+                    case ItemType.Pickaxe:
+                        audioSource.PlayOneShot(adventuress.pickaxe, 0.3f);
+                        break;
+                    default:
+                        break;
+                }
+            }
 			if (pickupParticles != null)
 			{
 				GameObject p = Instantiate(pickupParticles, transform.position, Quaternion.identity) as GameObject;

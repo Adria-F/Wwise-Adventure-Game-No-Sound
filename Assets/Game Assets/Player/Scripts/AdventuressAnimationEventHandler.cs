@@ -18,13 +18,24 @@ public class AdventuressAnimationEventHandler : MonoBehaviour
     public AudioClip[] waterSteps;
     public AudioClip[] woodSteps;
 
-    [Header("Weapons pickup sound")]
-    public AudioClip dagger;
+    [Header("Pickup sounds")]
+    public AudioClip book;
+    public AudioClip evilEssence;
+    public AudioClip mushroom;
+    public AudioClip crystalShard;
+    public AudioClip pinecone;
+    public AudioClip key;
+    public AudioClip scroll;
     public AudioClip sword;
     public AudioClip axe;
     public AudioClip pickaxe;
     public AudioClip hammer;
-    public AudioClip swing;
+    public AudioClip swing1;
+    public AudioClip swing2;
+    public AudioClip swing3;
+
+    [Header("Death sounds")]
+    public AudioClip[] deathSounds;
 
     [Header("Object Links")]
     [SerializeField]
@@ -178,7 +189,22 @@ public class AdventuressAnimationEventHandler : MonoBehaviour
                 volume = 0.5f;
                 break;
         }
-        audioSource.PlayOneShot(swing, volume);
+        AnimatorStateInfo currentAnimation = PlayerManager.Instance.playerAnimator.GetCurrentAnimatorStateInfo(0);
+        if (currentAnimation.IsName("Player_RightSwing"))
+        {
+            // HINT: Weapon combo state 1, you may want to take this into account when playing the weapon swing sound
+            audioSource.PlayOneShot(swing1, volume);
+        }
+        else if (currentAnimation.IsName("Player_LeftSwing"))
+        {
+            // HINT: Weapon combo state 2, you may want to take this into account when playing the weapon swing sound
+            audioSource.PlayOneShot(swing2, volume);
+        }
+        else if (currentAnimation.IsName("Player_TopSwing"))
+        {
+            // HINT: Weapon combo state 3, you may want to take this into account when playing the weapon swing sound
+            audioSource.PlayOneShot(swing3, volume);
+        }
     }
 
     public void PauseMovement()
@@ -217,11 +243,8 @@ public class AdventuressAnimationEventHandler : MonoBehaviour
         // HINT: This is a good place to play the Get item sound and stinger
         AudioSource audioSource = GetComponent<AudioSource>();
         Weapon EquippedWeapon = PlayerManager.Instance.equippedWeaponInfo;
-        switch(EquippedWeapon.weaponType)
+        switch (EquippedWeapon.weaponType)
         {
-            case WeaponTypes.Dagger:
-                audioSource.PlayOneShot(dagger, 0.2f);
-                break;
             case WeaponTypes.Sword:
                 audioSource.PlayOneShot(sword, 0.2f);
                 break;
@@ -244,7 +267,7 @@ public class AdventuressAnimationEventHandler : MonoBehaviour
         AudioSource audioSource = GetComponent<AudioSource>();
 
         SoundMaterial.Materials mat = SoundMaterial.Materials.STONE;
-        if (EquippedWeapon.lastHit().GetComponent<SoundMaterial>())
+        if (EquippedWeapon.lastHit() && EquippedWeapon.lastHit().GetComponent<SoundMaterial>())
             mat = EquippedWeapon.lastHit().GetComponent<SoundMaterial>().material;
 
         audioSource.PlayOneShot(GetComponent<WeaponSwitch>().requestSound(EquippedWeapon.weaponType, mat), 0.05f);

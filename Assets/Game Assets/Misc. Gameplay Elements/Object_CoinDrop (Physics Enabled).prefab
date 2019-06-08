@@ -14058,6 +14058,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playSpawnSoundAtSpawn: 1
+  drop: {fileID: 8300000, guid: 26402fb75d75b69498137c8d957a0bb4, type: 3}
+  pickup: {fileID: 8300000, guid: 5e8f1ad0b9cd88c41bcea54714c3f7cf, type: 3}
 --- !u!135 &135441306344924428
 SphereCollider:
   m_ObjectHideFlags: 0
