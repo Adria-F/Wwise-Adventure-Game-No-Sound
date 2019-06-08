@@ -64,6 +64,10 @@ public class GameManager : Singleton<GameManager>
 
     [HideInInspector]
     public GameObject MusicGameObject;
+    AudioSource G_M_audio;
+
+    public AudioClip defaultDay;
+    public AudioClip defaultNight;
 
     [Header("CHEATS")]
     public bool BigHeadMode;
@@ -104,14 +108,21 @@ public class GameManager : Singleton<GameManager>
         if (DisableWwizardMagicStateOnStart) {
             // HINT: New context state: MagicZone, Outside
         }
-        
+
         //MusicGameObject = GameObject.Find("Ak_PlayMusic");
+        MusicGameObject = GameObject.FindGameObjectWithTag("SoundZones");
+        G_M_audio = MusicGameObject.GetComponent<AudioSource>();
+        G_M_audio.loop = true;
+
+
         DayNightCall += dayNightPush;
         //MusicStart_Region.SetValue();
 
         //AkCallbackType CallbackType = AkCallbackType.AK_MusicSyncUserCue;
         //MusicEvent.Post(gameObject, (uint)CallbackType, CallBackFunction);
         // HINT: Place to update game music according to region and daylight variables
+
+        UpdateMusic();
 
         StartCoroutine(DistanceToEnemies());
         // HINT: Enemy music event?
@@ -120,7 +131,6 @@ public class GameManager : Singleton<GameManager>
 
     void Awake()
     {
-        
         ActiveCamera = Camera.main;
         if (ActiveCamera != null)
         {
@@ -229,13 +239,35 @@ public class GameManager : Singleton<GameManager>
     {
         if (CurrentZones.Count > 0)
         {
+            // HINT: Place to update game music according to region and daylight variable
+            if(dayTime)
+            {
+                G_M_audio.clip = CurrentZones[0].music_Day;
+            }
+            else
+            {
+                G_M_audio.clip = CurrentZones[0].music_Night;
+            }
             //CurrentZones[0].MusicState.SetValue();
-            // HINT: Place to update game music according to region and daylight variables
+            G_M_audio.volume = 0.5f;
         }
         else
         {
             // HINT: Place to update game music according to region and daylight variables
+            if (dayTime)
+            {
+                G_M_audio.clip = defaultDay;
+            }
+            else
+            {
+                G_M_audio.clip = defaultNight;
+            }
+
+            G_M_audio.volume = 1.0f;
         }
+
+        G_M_audio.Play();
+        G_M_audio.loop = true;
     }
 
     bool CanPostEnemyMusic = true;

@@ -16,12 +16,20 @@ public class Cave_WaterDropSounds : MonoBehaviour
     private List<GameObject> drops = new List<GameObject>();
     private bool stopped = false;
 
+    AudioSource W_D_audio;
+
     void Awake()
     {
         particles = GetComponent<ParticleSystem>();
         if (particles == null)
         {
             Destroy(this);
+        }
+
+        if(W_D_audio==null)
+        {
+            W_D_audio = GetComponent<AudioSource>();
+            W_D_audio.loop = false;
         }
     }
 
@@ -50,6 +58,11 @@ public class Cave_WaterDropSounds : MonoBehaviour
                     drops.Add(drop);
 
                     // HINT: A water drop has fallen, you might want to place some code here to play its sound effect
+                    if(!W_D_audio.isPlaying)
+                    {
+                        W_D_audio.Play();
+                    }
+
                     Destroy(drop, 1.5f);
                 }
             }
