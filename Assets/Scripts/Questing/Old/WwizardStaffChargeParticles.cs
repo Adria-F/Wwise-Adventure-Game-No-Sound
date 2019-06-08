@@ -36,7 +36,6 @@ public class WwizardStaffChargeParticles : MonoBehaviour
         {
             lineRenderer = GetComponent<LineRenderer>();
         }
-        Debug.Log("hello!");
 
         if (endPoint != null)
         {
