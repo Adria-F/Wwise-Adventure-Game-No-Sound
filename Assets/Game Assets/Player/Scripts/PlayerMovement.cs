@@ -29,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
     public List<GameObject> movementPausers = new List<GameObject>();
     [HideInInspector]
 
+    public float movementAmount = 0.0f;
+
     #region private variables
     //Ground checks
     private RaycastHit[] groundCheckHits = new RaycastHit[1];
@@ -149,7 +151,7 @@ public class PlayerMovement : MonoBehaviour
         runAmount = Mathf.Lerp(runAmount, playerBody.velocity.magnitude / 7.1f, Time.deltaTime * 10f); //TODO: Fix these hard-coded number.
         //Update the movementSpeed parameter in the animator
         animator.SetFloat(movementSpeedHash, runAmount);
-        float RTPCValue = runAmount * 100f;
+        movementAmount = runAmount;
         // HINT: You might need that RTPC value to control the player's movement sounds
     }
 

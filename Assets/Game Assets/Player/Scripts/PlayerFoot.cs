@@ -20,37 +20,58 @@ public class PlayerFoot : MonoBehaviour
     {
         SoundMaterial.Materials mat = materialChecker.CheckMaterial(gameObject);
         AudioSource audioSource = GetComponent<AudioSource>();
-        audioSource.PlayOneShot(GetRandomAudio(mat), 0.5F);
+        audioSource.PlayOneShot(GetRandomAudio(mat), 0.5f* PlayerManager.Instance.player.GetComponent<PlayerMovement>().movementAmount); 
 
         // HINT: Play footstep sound here
     }
 
     public AudioClip GetRandomAudio(SoundMaterial.Materials mat)
     {
-        AudioClip[] audioList = GameObject.FindGameObjectWithTag("Player").GetComponent<AdventuressAnimationEventHandler>().dirtSteps;
+        AudioClip[] audioList = GameObject.FindGameObjectWithTag("Player").GetComponent<AdventuressAnimationEventHandler>().dirtWalk;
 
         switch (mat)
         {
             case SoundMaterial.Materials.DIRT:
-                audioList = GameObject.FindGameObjectWithTag("Player").GetComponent<AdventuressAnimationEventHandler>().dirtSteps;
+                if (PlayerManager.Instance.player.GetComponent<PlayerMovement>().movementAmount > 0.5f)
+                    audioList = GameObject.FindGameObjectWithTag("Player").GetComponent<AdventuressAnimationEventHandler>().dirtRun;
+                else
+                    audioList = GameObject.FindGameObjectWithTag("Player").GetComponent<AdventuressAnimationEventHandler>().dirtWalk;
                 break;
             case SoundMaterial.Materials.GRASS:
-                audioList = GameObject.FindGameObjectWithTag("Player").GetComponent<AdventuressAnimationEventHandler>().grassSteps;
+                if (PlayerManager.Instance.player.GetComponent<PlayerMovement>().movementAmount > 0.5f)
+                    audioList = GameObject.FindGameObjectWithTag("Player").GetComponent<AdventuressAnimationEventHandler>().grassRun;
+                else
+                    audioList = GameObject.FindGameObjectWithTag("Player").GetComponent<AdventuressAnimationEventHandler>().grassWalk;
                 break;
             case SoundMaterial.Materials.RUBBLE:
-                audioList = GameObject.FindGameObjectWithTag("Player").GetComponent<AdventuressAnimationEventHandler>().rubbleSteps;
+                if (PlayerManager.Instance.player.GetComponent<PlayerMovement>().movementAmount > 0.5f)
+                    audioList = GameObject.FindGameObjectWithTag("Player").GetComponent<AdventuressAnimationEventHandler>().rubbleRun;
+                else
+                    audioList = GameObject.FindGameObjectWithTag("Player").GetComponent<AdventuressAnimationEventHandler>().rubbleWalk;
                 break;
             case SoundMaterial.Materials.SAND:
-                audioList = GameObject.FindGameObjectWithTag("Player").GetComponent<AdventuressAnimationEventHandler>().sandSteps;
+                if (PlayerManager.Instance.player.GetComponent<PlayerMovement>().movementAmount > 0.5f)
+                    audioList = GameObject.FindGameObjectWithTag("Player").GetComponent<AdventuressAnimationEventHandler>().sandRun;
+                else
+                    audioList = GameObject.FindGameObjectWithTag("Player").GetComponent<AdventuressAnimationEventHandler>().sandWalk;
                 break;
             case SoundMaterial.Materials.STONE:
-                audioList = GameObject.FindGameObjectWithTag("Player").GetComponent<AdventuressAnimationEventHandler>().stoneSteps;
+                if (PlayerManager.Instance.player.GetComponent<PlayerMovement>().movementAmount > 0.5f)
+                    audioList = GameObject.FindGameObjectWithTag("Player").GetComponent<AdventuressAnimationEventHandler>().stoneRun;
+                else
+                    audioList = GameObject.FindGameObjectWithTag("Player").GetComponent<AdventuressAnimationEventHandler>().stoneWalk;
                 break;
             case SoundMaterial.Materials.WATER:
-                audioList = GameObject.FindGameObjectWithTag("Player").GetComponent<AdventuressAnimationEventHandler>().waterSteps;
+                if (PlayerManager.Instance.player.GetComponent<PlayerMovement>().movementAmount > 0.5f)
+                    audioList = GameObject.FindGameObjectWithTag("Player").GetComponent<AdventuressAnimationEventHandler>().waterRun;
+                else
+                    audioList = GameObject.FindGameObjectWithTag("Player").GetComponent<AdventuressAnimationEventHandler>().waterWalk;
                 break;
             case SoundMaterial.Materials.WOOD:
-                audioList = GameObject.FindGameObjectWithTag("Player").GetComponent<AdventuressAnimationEventHandler>().woodSteps;
+                if (PlayerManager.Instance.player.GetComponent<PlayerMovement>().movementAmount > 0.5f)
+                    audioList = GameObject.FindGameObjectWithTag("Player").GetComponent<AdventuressAnimationEventHandler>().woodRun;
+                else
+                    audioList = GameObject.FindGameObjectWithTag("Player").GetComponent<AdventuressAnimationEventHandler>().woodWalk;
                 break;
         }
 

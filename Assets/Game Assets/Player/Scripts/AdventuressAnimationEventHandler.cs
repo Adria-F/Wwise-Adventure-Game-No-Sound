@@ -10,13 +10,20 @@ using System.Collections;
 public class AdventuressAnimationEventHandler : MonoBehaviour
 {
     [Header("Step Sounds")]
-    public AudioClip[] dirtSteps;
-    public AudioClip[] grassSteps;
-    public AudioClip[] rubbleSteps;
-    public AudioClip[] sandSteps;
-    public AudioClip[] stoneSteps;
-    public AudioClip[] waterSteps;
-    public AudioClip[] woodSteps;
+    public AudioClip[] dirtWalk;
+    public AudioClip[] dirtRun;
+    public AudioClip[] grassWalk;
+    public AudioClip[] grassRun;
+    public AudioClip[] rubbleWalk;
+    public AudioClip[] rubbleRun;
+    public AudioClip[] sandWalk;
+    public AudioClip[] sandRun;
+    public AudioClip[] stoneWalk;
+    public AudioClip[] stoneRun;
+    public AudioClip[] waterWalk;
+    public AudioClip[] waterRun;
+    public AudioClip[] woodWalk;
+    public AudioClip[] woodRun;
 
     [Header("Pickup sounds")]
     public AudioClip book;
