@@ -25,18 +25,22 @@ namespace QuestSystem
         public bool StartQuestLineOnStart = true;
         public List<Quest> Quests;
 
+        private AudioSource audio_source;
+
         #region private variables
         private int currentQuestIdx = 0;
         private bool initializingNewQuest = false;
-
         private IEnumerator interactionRoutine;
         #endregion
 
         private void Start()
         {
+            audio_source = GameObject.FindGameObjectWithTag("Menu/UI").GetComponent<AudioSource>();
+            
             if (StartQuestLineOnStart)
             {
                 InitializeQuest(currentQuestIdx);
+
             }
         }
 
@@ -59,7 +63,7 @@ namespace QuestSystem
             }
 
             QuestlineProgressionRTPC = GetNormalizedQuestlineProgress() * 100f;
-            // HINT: Questline progression RTPC changed, does this affect to any sound?
+            // HINT: Questline progression RTPC changed, does this affect to any sound?            
             initializingNewQuest = false;
         }
 
@@ -86,12 +90,14 @@ namespace QuestSystem
             currentQuestIdx++;
             if (currentQuestIdx < Quests.Count)
             {
-                // HINT: Questline complete, you may want to play a sound here
+                // HINT: Questline complete, you may want to play a sound here                                
+                audio_source.PlayOneShot(Resources.Load<AudioClip>("Audio/Interface/BAS_Quest_CompleteCollection_01"));                
                 InitializeQuest(currentQuestIdx);
             }
             else
             {
-                // HINT: Questline complete, you may want to play a sound here
+                // HINT: Questline complete, you may want to play a sound here           
+                audio_source.PlayOneShot(Resources.Load<AudioClip>("Audio/Interface/BAS_Quest_CompleteCollection_02"));
                 if (OnQuestlineComplete != null)
                 {
                     OnQuestlineComplete(this);
