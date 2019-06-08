@@ -15,6 +15,10 @@ public class Menu : MonoBehaviour
     public static bool isOpen = false;
     public static MenuStateEvent OnMenuStateChange;
 
+    [Header("Audio Clips")]
+    public AudioClip open_inv;
+    public AudioClip close_inv;
+
     [Header("Other")]
     public AnimatedObjectActiveHandler ControlsBox;
     public AnimatedObjectActiveHandler QuestBox;
@@ -23,6 +27,7 @@ public class Menu : MonoBehaviour
     public MenuEvent OnMenuDown;
 
     private bool menuOpen = false;
+    private AudioSource audio_source;
 
     public void Update()
     {
@@ -34,6 +39,7 @@ public class Menu : MonoBehaviour
     private void OnEnable()
     {
         InputManager.OnMenuDown += ToggleMenu;
+        audio_source = GetComponent<AudioSource>();
     }
 
     private void OnDisable()
@@ -50,6 +56,7 @@ public class Menu : MonoBehaviour
             if (menuOpen)
             {
                 // HINT: Play menu open sound here
+                audio_source.PlayOneShot(open_inv);
                 GameManager.Instance.gameSpeedHandler.PauseGameSpeed(gameObject.GetInstanceID());
                 GameManager.Instance.BlurCam();
 
@@ -62,6 +69,7 @@ public class Menu : MonoBehaviour
             else
             {
                 // HINT: Play menu close sound here
+                audio_source.PlayOneShot(close_inv);
                 GameManager.Instance.gameSpeedHandler.UnPauseGameSpeed(gameObject.GetInstanceID());
                 GameManager.Instance.UnBlurCam();
                 QuestBox.DisableObject(0.25f);

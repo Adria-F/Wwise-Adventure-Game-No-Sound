@@ -17,6 +17,7 @@ TagManager:
   - PlayerHead
   - TeleportDestination
   - Wwizard
+  - Menu/UI
   layers:
   - Default
   - TransparentFX
