@@ -14,6 +14,8 @@ public class CheckPoint : MonoBehaviour
     private float origIntensity;
     private IEnumerator fadeRoutine;
 
+    AudioSource C_P_audio;
+
     void Awake()
     {
         particles = GetComponentInChildren<ParticleSystem>();
@@ -27,6 +29,10 @@ public class CheckPoint : MonoBehaviour
             checkPointLight.intensity = 0;
             checkPointLight.enabled = false;
         }
+        if(C_P_audio==null)
+        {
+            C_P_audio = GetComponent<AudioSource>();
+        }
     }
 
     void OnTriggerEnter(Collider col)
@@ -35,6 +41,7 @@ public class CheckPoint : MonoBehaviour
         {
             particles.Play();
             // HINT: Fireplace started, you might want to place some code here to play the fireplace sound
+            C_P_audio.Play();
 
             if (checkPointLight != null)
             {
@@ -62,6 +69,7 @@ public class CheckPoint : MonoBehaviour
     public void DisableCheckPoint()
     {
         // HINT: Fireplace stopped, you might want to place some code here to stop the fireplace sound
+        C_P_audio.Stop();
         particles.Stop();
     }
 
