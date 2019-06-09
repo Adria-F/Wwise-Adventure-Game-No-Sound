@@ -117,7 +117,7 @@ public class GameManager : Singleton<GameManager>
         G_M_audio = MusicGameObject.GetComponent<AudioSource>();
         G_M_audio.loop = true;
 
-        audio_source_Music = GameObject.FindGameObjectWithTag("MusicZones").AddComponent<AudioSource>();
+        audio_source_Music = GameObject.FindGameObjectWithTag("MusicZones").GetComponent<AudioSource>();
         audio_source_Music.loop = true;
 
         audio_source_Music.outputAudioMixerGroup = (AudioMixerGroup)FindObjectOfType(typeof(AudioMixerGroup));
@@ -258,9 +258,7 @@ public class GameManager : Singleton<GameManager>
                 G_M_audio.clip = CurrentZones[0].music_Night;
                 audio_source_Music.clip = CurrentZones[0].musicMix_Night;
             }
-            //CurrentZones[0].MusicState.SetValue();
-            G_M_audio.volume = 0.1f;
-            audio_source_Music.volume = 1.0f;
+
         }
         else
         {
@@ -275,8 +273,6 @@ public class GameManager : Singleton<GameManager>
                 G_M_audio.clip = defaultNight;
             }
             audio_source_Music.clip = defaultAmbientMix;
-            audio_source_Music.volume = 1.0f;
-            G_M_audio.volume = 0.2f;
         }
 
         G_M_audio.Play();
