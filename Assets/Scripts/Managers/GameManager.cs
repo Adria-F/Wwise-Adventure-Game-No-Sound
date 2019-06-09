@@ -9,6 +9,7 @@ using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 using UnityStandardAssets.ImageEffects;
+using UnityEngine.Audio;
 
 public delegate void dayNightPush(bool condition);
 public delegate void OnMusic();
@@ -65,9 +66,11 @@ public class GameManager : Singleton<GameManager>
     [HideInInspector]
     GameObject MusicGameObject;
     AudioSource G_M_audio;
+    AudioSource audio_source_Music;
 
     public AudioClip defaultDay;
     public AudioClip defaultNight;
+    public AudioClip defaultAmbientMix;
 
     [Header("CHEATS")]
     public bool BigHeadMode;
@@ -114,7 +117,11 @@ public class GameManager : Singleton<GameManager>
         G_M_audio = MusicGameObject.GetComponent<AudioSource>();
         G_M_audio.loop = true;
 
+        audio_source_Music = GameObject.FindGameObjectWithTag("MusicZones").AddComponent<AudioSource>();
+        audio_source_Music.loop = true;
 
+        audio_source_Music.outputAudioMixerGroup = (AudioMixerGroup)FindObjectOfType(typeof(AudioMixerGroup));
+        
         DayNightCall += dayNightPush;
         //MusicStart_Region.SetValue();
 
@@ -237,19 +244,23 @@ public class GameManager : Singleton<GameManager>
 
     void UpdateMusic()
     {
+        Debug.Log(CurrentZones.Count);
         if (CurrentZones.Count > 0)
-        {
+        {            
             // HINT: Place to update game music according to region and daylight variable
             if(dayTime)
             {
                 G_M_audio.clip = CurrentZones[0].music_Day;
+                audio_source_Music.clip = CurrentZones[0].musicMix_Day;
             }
             else
             {
                 G_M_audio.clip = CurrentZones[0].music_Night;
+                audio_source_Music.clip = CurrentZones[0].musicMix_Night;
             }
             //CurrentZones[0].MusicState.SetValue();
-            G_M_audio.volume = 0.5f;
+            G_M_audio.volume = 0.1f;
+            audio_source_Music.volume = 1.0f;
         }
         else
         {
@@ -257,17 +268,22 @@ public class GameManager : Singleton<GameManager>
             if (dayTime)
             {
                 G_M_audio.clip = defaultDay;
+                
             }
             else
             {
                 G_M_audio.clip = defaultNight;
             }
-
-            G_M_audio.volume = 1.0f;
+            audio_source_Music.clip = defaultAmbientMix;
+            audio_source_Music.volume = 1.0f;
+            G_M_audio.volume = 0.2f;
         }
 
         G_M_audio.Play();
         G_M_audio.loop = true;
+
+        audio_source_Music.Play();
+        audio_source_Music.loop = true;
     }
 
     bool CanPostEnemyMusic = true;

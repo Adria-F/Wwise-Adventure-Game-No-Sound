@@ -19,6 +19,8 @@ TagManager:
   - Wwizard
   - Menu/UI
   - SoundZones
+  - AudioMenu
+  - MusicZones
   layers:
   - Default
   - TransparentFX

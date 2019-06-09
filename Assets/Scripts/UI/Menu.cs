@@ -39,7 +39,8 @@ public class Menu : MonoBehaviour
     private void OnEnable()
     {
         InputManager.OnMenuDown += ToggleMenu;
-        audio_source = GetComponent<AudioSource>();
+        audio_source = GameObject.FindGameObjectWithTag("Menu/UI").GetComponent<AudioSource>();
+        
     }
 
     private void OnDisable()
@@ -61,10 +62,10 @@ public class Menu : MonoBehaviour
                 GameManager.Instance.BlurCam();
 
                 QuestBox.EnableObject(0.5f);
-#if UNITY_STANDALONE
+                #if UNITY_STANDALONE
                 PlayerManager.Instance.cameraScript.FreezeAndShowCursor(true, gameObject);
                 ControlsBox.EnableObject(0.5f);
-#endif
+                #endif
             }
             else
             {
@@ -73,10 +74,10 @@ public class Menu : MonoBehaviour
                 GameManager.Instance.gameSpeedHandler.UnPauseGameSpeed(gameObject.GetInstanceID());
                 GameManager.Instance.UnBlurCam();
                 QuestBox.DisableObject(0.25f);
-#if UNITY_STANDALONE
+                #if UNITY_STANDALONE
                 PlayerManager.Instance.cameraScript.FreezeAndShowCursor(false, gameObject);
                 ControlsBox.DisableObject(0.25f);
-#endif
+                #endif
 
             }
 

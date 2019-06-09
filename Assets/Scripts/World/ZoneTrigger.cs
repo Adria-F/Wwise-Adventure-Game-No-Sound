@@ -12,6 +12,8 @@ public class ZoneTrigger : MonoBehaviour
     public bool isSafeZone = false;
     public AudioClip music_Day;
     public AudioClip music_Night;
+    public AudioClip musicMix_Day;
+    public AudioClip musicMix_Night;
 
     void OnTriggerEnter(Collider col)
     {
