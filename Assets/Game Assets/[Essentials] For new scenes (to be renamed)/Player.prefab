@@ -523,6 +523,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 66048
   movementPausers: []
+  movementAmount: 0
 --- !u!114 &114000011328938820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -616,102 +617,121 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32e6db5b0509f4b009956b51abc1fb20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dirtSteps:
-  - {fileID: 8300000, guid: 3f29745a82090714296021ebbd104d1c, type: 3}
-  - {fileID: 8300000, guid: be8128048ff30614b9ff130277bd82b4, type: 3}
-  - {fileID: 8300000, guid: a057f28bc4d8b7945af6d8a532066b15, type: 3}
-  - {fileID: 8300000, guid: cd1e4fab21298a9499ad2fa2d9549f9c, type: 3}
-  - {fileID: 8300000, guid: 9a041a8cfe7f2f24388b5b554bfb5c94, type: 3}
-  - {fileID: 8300000, guid: fc6cadb16e7101648a839db005821d41, type: 3}
+  dirtWalk:
   - {fileID: 8300000, guid: 9e2250842c6a6cd4a8c2e6cdaaf0dfb9, type: 3}
   - {fileID: 8300000, guid: b43d6a86ce2db8f46a51a45b92c34c4d, type: 3}
   - {fileID: 8300000, guid: 7b5534c774fb5744398a9a01d382d8aa, type: 3}
   - {fileID: 8300000, guid: cbe77b72e97b6cf4caa9d95e67cdc279, type: 3}
   - {fileID: 8300000, guid: 68e475da7a3fe5747927a19914f2c964, type: 3}
   - {fileID: 8300000, guid: 3ca4505bc746bf54cbea0dd006369439, type: 3}
-  grassSteps:
-  - {fileID: 8300000, guid: e3738f8e324a5e34abae42a243ffb328, type: 3}
-  - {fileID: 8300000, guid: 03e2a80f1ccd9834abd869db03c78b13, type: 3}
-  - {fileID: 8300000, guid: afb8b5d666bda1543bd9b1acf9dc69cb, type: 3}
-  - {fileID: 8300000, guid: 6c77d48ac4062484983bc3ad471659a2, type: 3}
-  - {fileID: 8300000, guid: b0be67972bb8d08498cd2ae2ff246321, type: 3}
-  - {fileID: 8300000, guid: ed6636f65daf7ae4abbbedfba335e273, type: 3}
+  dirtRun:
+  - {fileID: 8300000, guid: 3f29745a82090714296021ebbd104d1c, type: 3}
+  - {fileID: 8300000, guid: be8128048ff30614b9ff130277bd82b4, type: 3}
+  - {fileID: 8300000, guid: a057f28bc4d8b7945af6d8a532066b15, type: 3}
+  - {fileID: 8300000, guid: cd1e4fab21298a9499ad2fa2d9549f9c, type: 3}
+  - {fileID: 8300000, guid: 9a041a8cfe7f2f24388b5b554bfb5c94, type: 3}
+  - {fileID: 8300000, guid: fc6cadb16e7101648a839db005821d41, type: 3}
+  grassWalk:
   - {fileID: 8300000, guid: 9e84461efb76d7245a13cc33e8b229b8, type: 3}
   - {fileID: 8300000, guid: 183b6ea479a3b7b4e99e86131ea22e44, type: 3}
   - {fileID: 8300000, guid: 5c28b82c9c37f9042a1eb764bbcd84f2, type: 3}
   - {fileID: 8300000, guid: abf0f49ef41b4904f8185f2ecf7a0841, type: 3}
   - {fileID: 8300000, guid: 0ad599e7462557e4f94c55c624696831, type: 3}
   - {fileID: 8300000, guid: c2ca65de92aed524cb47042be38754dc, type: 3}
-  rubbleSteps:
+  grassRun:
+  - {fileID: 8300000, guid: e3738f8e324a5e34abae42a243ffb328, type: 3}
+  - {fileID: 8300000, guid: 03e2a80f1ccd9834abd869db03c78b13, type: 3}
+  - {fileID: 8300000, guid: afb8b5d666bda1543bd9b1acf9dc69cb, type: 3}
+  - {fileID: 8300000, guid: 6c77d48ac4062484983bc3ad471659a2, type: 3}
+  - {fileID: 8300000, guid: b0be67972bb8d08498cd2ae2ff246321, type: 3}
+  - {fileID: 8300000, guid: ed6636f65daf7ae4abbbedfba335e273, type: 3}
+  rubbleWalk:
+  - {fileID: 8300000, guid: 6d5a65b179ded694c87816e931bacdc2, type: 3}
+  - {fileID: 8300000, guid: 6c5dfa4ff31881546a351a4f81d3a65a, type: 3}
+  - {fileID: 8300000, guid: 8faeb7cc39fdb8c4da909a26c249fbf6, type: 3}
+  - {fileID: 8300000, guid: d50f7e695fd840e4fae5df8540cfe469, type: 3}
+  - {fileID: 8300000, guid: bd35106e47065ff48b2e7d4058d34e57, type: 3}
+  rubbleRun:
   - {fileID: 8300000, guid: c391196b8e3d19d4bbc91a6366c87243, type: 3}
   - {fileID: 8300000, guid: 3c69bc843d48ba0438feba7b141180be, type: 3}
   - {fileID: 8300000, guid: 6d58ebbfbb4a24a4f909398674990f4b, type: 3}
   - {fileID: 8300000, guid: 53cbc8f051f0ed742b3019995920659a, type: 3}
   - {fileID: 8300000, guid: a7b5849dc5174564489803bb96be04e6, type: 3}
   - {fileID: 8300000, guid: bc53132e35de7f44892cd7a16b9cc561, type: 3}
-  - {fileID: 8300000, guid: 6d5a65b179ded694c87816e931bacdc2, type: 3}
-  - {fileID: 8300000, guid: 6c5dfa4ff31881546a351a4f81d3a65a, type: 3}
-  - {fileID: 8300000, guid: 8faeb7cc39fdb8c4da909a26c249fbf6, type: 3}
-  - {fileID: 8300000, guid: d50f7e695fd840e4fae5df8540cfe469, type: 3}
-  - {fileID: 8300000, guid: bd35106e47065ff48b2e7d4058d34e57, type: 3}
-  sandSteps:
-  - {fileID: 8300000, guid: 5e69c7504a9696c428c945cdf7f53fe2, type: 3}
-  - {fileID: 8300000, guid: b1c68be0fac138647a189af60b29c083, type: 3}
-  - {fileID: 8300000, guid: 914bc8c91620c32408259909ed794e17, type: 3}
-  - {fileID: 8300000, guid: 0d9cfeccac65a0943bba1483f3169d89, type: 3}
-  - {fileID: 8300000, guid: dc7fe5559c8a97344b09f8cf50234cee, type: 3}
-  - {fileID: 8300000, guid: 123f2f04067ab5f4b8724cf87cb03c76, type: 3}
+  sandWalk:
   - {fileID: 8300000, guid: 269f28bc1934a4d40bad8444f0efe8f9, type: 3}
   - {fileID: 8300000, guid: e4fba6e2470586043afcaf2c42be122d, type: 3}
   - {fileID: 8300000, guid: 01cba0b7f34c65147bb43bc03289fb65, type: 3}
   - {fileID: 8300000, guid: b38ff3d3226e8f949a5f3fa9d931444b, type: 3}
   - {fileID: 8300000, guid: ae294e7cfac480e4e9c828a0e036008b, type: 3}
   - {fileID: 8300000, guid: a943ba7eafcd2ed4aa6809d2434a17b3, type: 3}
-  stoneSteps:
-  - {fileID: 8300000, guid: 576f3438d8ea84a4186dfb4fa52825fa, type: 3}
-  - {fileID: 8300000, guid: a6eb516be453a7048b0fac00068aac05, type: 3}
-  - {fileID: 8300000, guid: b45821fcf4691ca4f9dd03345d6e609c, type: 3}
-  - {fileID: 8300000, guid: d4cb14d78bdfae241af855c2a6018ef0, type: 3}
-  - {fileID: 8300000, guid: 19159946653f6304b8a24c9336397abb, type: 3}
-  - {fileID: 8300000, guid: 5a13b4b14c9cc4d4891995473ed93666, type: 3}
+  sandRun:
+  - {fileID: 8300000, guid: 5e69c7504a9696c428c945cdf7f53fe2, type: 3}
+  - {fileID: 8300000, guid: b1c68be0fac138647a189af60b29c083, type: 3}
+  - {fileID: 8300000, guid: 914bc8c91620c32408259909ed794e17, type: 3}
+  - {fileID: 8300000, guid: 0d9cfeccac65a0943bba1483f3169d89, type: 3}
+  - {fileID: 8300000, guid: dc7fe5559c8a97344b09f8cf50234cee, type: 3}
+  - {fileID: 8300000, guid: 123f2f04067ab5f4b8724cf87cb03c76, type: 3}
+  stoneWalk:
   - {fileID: 8300000, guid: a5db70dd68e699149a4031296bc68e16, type: 3}
   - {fileID: 8300000, guid: ce4eac58ce1bd9c42bb56a843398aa2a, type: 3}
   - {fileID: 8300000, guid: 164f1e57e0959de469243f6625c9df33, type: 3}
   - {fileID: 8300000, guid: faee6d7015121d347bed2ee712d76c34, type: 3}
   - {fileID: 8300000, guid: b2b4dc0d14cef6f4bbda203acfc64a9b, type: 3}
   - {fileID: 8300000, guid: bfd37083f9d48c94992a6a067e7718d3, type: 3}
-  waterSteps:
-  - {fileID: 8300000, guid: 4e2f9ec8d61aa6c4cad8c95204d3c79c, type: 3}
-  - {fileID: 8300000, guid: 6e4366430763dc74e9c0868242e06d12, type: 3}
-  - {fileID: 8300000, guid: 4ef5e57e3f27763459a59c4462125c8a, type: 3}
-  - {fileID: 8300000, guid: a0f413b546d489f4ea81b479affcee4c, type: 3}
-  - {fileID: 8300000, guid: 71e0e45d12dcada458094a4fb03b295b, type: 3}
-  - {fileID: 8300000, guid: c9915cc3e00f4d5479f0e3ab6a6215cb, type: 3}
+  stoneRun:
+  - {fileID: 8300000, guid: 576f3438d8ea84a4186dfb4fa52825fa, type: 3}
+  - {fileID: 8300000, guid: a6eb516be453a7048b0fac00068aac05, type: 3}
+  - {fileID: 8300000, guid: b45821fcf4691ca4f9dd03345d6e609c, type: 3}
+  - {fileID: 8300000, guid: d4cb14d78bdfae241af855c2a6018ef0, type: 3}
+  - {fileID: 8300000, guid: 19159946653f6304b8a24c9336397abb, type: 3}
+  - {fileID: 8300000, guid: 5a13b4b14c9cc4d4891995473ed93666, type: 3}
+  waterWalk:
   - {fileID: 8300000, guid: c7e8b0d51e6f3ee4694c0831de38b8a4, type: 3}
   - {fileID: 8300000, guid: 5311acb538d64a14d884aad704fd36b3, type: 3}
   - {fileID: 8300000, guid: d6e0edfdc2b2d8a43a6e7a45f4377025, type: 3}
   - {fileID: 8300000, guid: 22164105c6ab6dc43bc05a206d355633, type: 3}
   - {fileID: 8300000, guid: eaa7d2ed80ce52e4ba6151dd6053c4e7, type: 3}
   - {fileID: 8300000, guid: 51e40d04066094f4ba073e6da34f3660, type: 3}
-  woodSteps:
-  - {fileID: 8300000, guid: 00a4597fe1cd43f40bc5d74c8f9e027d, type: 3}
-  - {fileID: 8300000, guid: 6b4eeecf57703f1438ffd29f294b7056, type: 3}
-  - {fileID: 8300000, guid: 6781a71f8d2d1f049bdd7b8e0b65f62c, type: 3}
-  - {fileID: 8300000, guid: 5a95645342cffc14d963ba710bb3b534, type: 3}
-  - {fileID: 8300000, guid: 5aea490c094ba584b9ff565e23ebe62e, type: 3}
-  - {fileID: 8300000, guid: d7d730f3f2d2a4d4781ff8b14743e3d6, type: 3}
+  waterRun:
+  - {fileID: 8300000, guid: 4e2f9ec8d61aa6c4cad8c95204d3c79c, type: 3}
+  - {fileID: 8300000, guid: 6e4366430763dc74e9c0868242e06d12, type: 3}
+  - {fileID: 8300000, guid: 4ef5e57e3f27763459a59c4462125c8a, type: 3}
+  - {fileID: 8300000, guid: a0f413b546d489f4ea81b479affcee4c, type: 3}
+  - {fileID: 8300000, guid: 71e0e45d12dcada458094a4fb03b295b, type: 3}
+  - {fileID: 8300000, guid: c9915cc3e00f4d5479f0e3ab6a6215cb, type: 3}
+  woodWalk:
   - {fileID: 8300000, guid: 1b79e5d566605e244a43ba823ec76c80, type: 3}
   - {fileID: 8300000, guid: 11660e55eb9a0a2488792149492c2455, type: 3}
   - {fileID: 8300000, guid: 06cfbf90c5f24f04b844822279f1f16d, type: 3}
   - {fileID: 8300000, guid: bf4a04e428ff42549a16772213102713, type: 3}
   - {fileID: 8300000, guid: a8bb331dfddf44e4991d1434ccf567d6, type: 3}
   - {fileID: 8300000, guid: 25b9d7fe6f94d5b41b8e981e7cefcb77, type: 3}
-  dagger: {fileID: 8300000, guid: e20c20fc7f86b8248b1e20aea5decbd6, type: 3}
+  woodRun:
+  - {fileID: 8300000, guid: 00a4597fe1cd43f40bc5d74c8f9e027d, type: 3}
+  - {fileID: 8300000, guid: 6b4eeecf57703f1438ffd29f294b7056, type: 3}
+  - {fileID: 8300000, guid: 6781a71f8d2d1f049bdd7b8e0b65f62c, type: 3}
+  - {fileID: 8300000, guid: 5a95645342cffc14d963ba710bb3b534, type: 3}
+  - {fileID: 8300000, guid: 5aea490c094ba584b9ff565e23ebe62e, type: 3}
+  - {fileID: 8300000, guid: d7d730f3f2d2a4d4781ff8b14743e3d6, type: 3}
+  book: {fileID: 8300000, guid: c324279ec49cfc24590ef2a67e0acab2, type: 3}
+  evilEssence: {fileID: 8300000, guid: b8a575b8c78a4af48b3e12429bdddec1, type: 3}
+  mushroom: {fileID: 8300000, guid: 602d4e03649c1bf41a547184a1befc6f, type: 3}
+  crystalShard: {fileID: 8300000, guid: 0cd12e2832bbe4f409d14c1a86439554, type: 3}
+  pinecone: {fileID: 8300000, guid: baef150f57ce3cd429ef792b1eb4d18d, type: 3}
+  key: {fileID: 8300000, guid: c6f93c9761a0d6140bef18307a88175a, type: 3}
+  scroll: {fileID: 8300000, guid: baef150f57ce3cd429ef792b1eb4d18d, type: 3}
   sword: {fileID: 8300000, guid: af82c0813406e2c488a86a4fa6478439, type: 3}
   axe: {fileID: 8300000, guid: b131036473737fd49be99b0947c60940, type: 3}
   pickaxe: {fileID: 8300000, guid: 62cfefab590b45142a4a8325713e39ab, type: 3}
   hammer: {fileID: 8300000, guid: 8e0215fc3daa2534ba64ae1edd19a6f0, type: 3}
-  swing: {fileID: 8300000, guid: 3969dff2439c76a458ea0d1d82e56c15, type: 3}
+  swing1: {fileID: 8300000, guid: 48b19366951429d4296c0993a5818262, type: 3}
+  swing2: {fileID: 8300000, guid: 72a5f8ae1506cfb4f8042a4df856f720, type: 3}
+  swing3: {fileID: 8300000, guid: 3969dff2439c76a458ea0d1d82e56c15, type: 3}
+  deathSounds:
+  - {fileID: 8300000, guid: ee1aef200f53c8a45a197dafc851f72e, type: 3}
+  - {fileID: 8300000, guid: 2959944e426071b428cf47afab82f7b6, type: 3}
+  - {fileID: 8300000, guid: 61d22bf2d9e24f44a8d3e362ea8c5a69, type: 3}
   playerAnimator: {fileID: 95636515816211616}
   runParticles: {fileID: 1000011273223974, guid: a676ddf5cf5fc448fa366c97e12f0f69,
     type: 3}
@@ -724,7 +744,7 @@ AudioSource:
   m_GameObject: {fileID: 1000011631600178}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 6d62d449b3e746c45ba1584c302363a2,
+  OutputAudioMixerGroup: {fileID: 243779966219124716, guid: 6d62d449b3e746c45ba1584c302363a2,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
@@ -5942,6 +5962,7 @@ MonoBehaviour:
   SpellSelect: 0
   charge_end: {fileID: 8300000, guid: 83ab6ae44d5b6c4498d6882cf1cee725, type: 3}
   charge_loop: {fileID: 8300000, guid: e642c0d26423c3c44b8df19a096ef42f, type: 3}
+  spellCast: {fileID: 8300000, guid: aace6a6931fcf9b42a5535b227b15542, type: 3}
   SpellChargeLevel: NaN
 --- !u!54 &54086396311597208
 Rigidbody:
@@ -6382,7 +6403,7 @@ AudioSource:
   m_GameObject: {fileID: 1000012725502494}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 6d62d449b3e746c45ba1584c302363a2,
+  OutputAudioMixerGroup: {fileID: 243779966219124716, guid: 6d62d449b3e746c45ba1584c302363a2,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
@@ -7140,7 +7161,7 @@ AudioSource:
   m_GameObject: {fileID: 1000013457670882}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 6d62d449b3e746c45ba1584c302363a2,
+  OutputAudioMixerGroup: {fileID: 243779966219124716, guid: 6d62d449b3e746c45ba1584c302363a2,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
