@@ -240,7 +240,7 @@ MonoBehaviour:
   navMeshAgent: {fileID: 195000013306575552}
   navMeshObstacle: {fileID: 208164881853923320}
   W_gimmick: {fileID: 8300000, guid: 035e157a7e76bf0498f3f407b505891f, type: 3}
-  W_groundhit: {fileID: 8300000, guid: 8a0a8b9350b9d2a4a8eb1de566199ee9, type: 3}
+  W_groundhit: {fileID: 8300000, guid: c559aa907a6144a4d820714d82b10b37, type: 3}
 --- !u!114 &114000010743729794
 MonoBehaviour:
   m_ObjectHideFlags: 0
