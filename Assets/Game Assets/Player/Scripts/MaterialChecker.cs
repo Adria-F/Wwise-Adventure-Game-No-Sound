@@ -14,7 +14,7 @@ public class MaterialChecker : MonoBehaviour
     private RaycastHit hit;
     private Vector3 direction = Vector3.down;
     private Transform trn;
-    private Vector3 checkOffset = Vector3.up * 0.1f;
+    private Vector3 checkOffset = Vector3.up * 1.75f;
     #endregion
 
     void Awake()
@@ -35,12 +35,13 @@ public class MaterialChecker : MonoBehaviour
 
     public SoundMaterial.Materials CheckMaterial(GameObject go)
     {
-        if (Physics.Raycast(trn.position + checkOffset, direction, out hit, layermask))
+        if (Physics.Raycast(trn.position + checkOffset, direction, out hit, 20.0f, layermask))
         {
             SoundMaterial sm = hit.collider.gameObject.GetComponent<SoundMaterial>();
            
             if (sm != null)
             {
+                Debug.Log(hit.collider.gameObject.name);
                 return sm.material;
                 // HINT: Check this
                 //sm.material.SetValue(go);
@@ -63,5 +64,4 @@ public class MaterialChecker : MonoBehaviour
         }
         return -1;
     }
-
 }
