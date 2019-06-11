@@ -61,6 +61,7 @@ public class GameManager : Singleton<GameManager>
     private Camera ActiveCamera;
     private BlurOptimized blur;
     private IEnumerator blurRoutine;
+    private bool fadingout = false;
     #endregion
 
     [HideInInspector]
@@ -230,16 +231,64 @@ public class GameManager : Singleton<GameManager>
     public List<ZoneTrigger> CurrentZones = new List<ZoneTrigger>();
     public List<Creature> Enemies = new List<Creature>();
 
+
+
     public void LeaveZone(ZoneTrigger Z)
     {
-        CurrentZones.Remove(Z);
+        StartCoroutine("FadeOut", Z);
+    }
+
+    IEnumerator FadeOut(ZoneTrigger Z)
+    {
+        float startTime = Time.time;        
+        while (true)
+        {
+            fadingout = true;
+            float elapsed = Time.time - startTime;
+
+            audio_source_Music.volume = Mathf.Clamp01(Mathf.Lerp(audio_source_Music.volume, 0, elapsed / 5.0f));
+
+            if (audio_source_Music.volume == 0)
+            {
+                fadingout = false;
+                CurrentZones.Remove(Z);
+                UpdateMusic();
+                break;
+            }
+
+            yield return null;
+        }
+
+    }
+
+    IEnumerator FadeIn(ZoneTrigger Z)
+    {
+        yield return new WaitUntil(() => audio_source_Music.volume == 0);
+
+        CurrentZones.Insert(0, Z);
         UpdateMusic();
+        float startTime = Time.time;
+
+        while (true)
+        {
+            float elapsed = Time.time - startTime;
+
+            audio_source_Music.volume = Mathf.Clamp01(Mathf.Lerp(0.0f, 0.5f, elapsed / 5.0f));
+
+            if (audio_source_Music.volume == 0.5f)
+            {
+
+                break;
+            }
+
+            yield return null;
+        }
+        
     }
 
     public void EnterZone(ZoneTrigger Z)
     {
-        CurrentZones.Insert(0, Z);
-        UpdateMusic();
+        StartCoroutine("FadeIn", Z);
     }
 
     void UpdateMusic()

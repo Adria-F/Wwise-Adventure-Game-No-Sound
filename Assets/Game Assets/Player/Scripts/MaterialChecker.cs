@@ -41,7 +41,7 @@ public class MaterialChecker : MonoBehaviour
            
             if (sm != null)
             {
-                Debug.Log(hit.collider.gameObject.name);
+                //Debug.Log(hit.collider.gameObject.name);
                 return sm.material;
                 // HINT: Check this
                 //sm.material.SetValue(go);
