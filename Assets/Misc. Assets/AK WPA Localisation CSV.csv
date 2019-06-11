@@ -20,6 +20,7 @@ menu_audio,Audio,Audio
 menu_audioSettings,Audio Settings,Paramètres Audio
 menu_masterVolume,Master Volume,Volume Principal
 menu_musicVolume,Music Volume,Volume de la Musique
+menu_effectsVolume,Effects Volume, Volume dels Effects
 menu_quit,Quit Game,Quitter
 menu_resume,Resume,Continuer
 menu_back,Back,Retour
